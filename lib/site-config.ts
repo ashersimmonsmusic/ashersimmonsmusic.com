@@ -23,7 +23,6 @@ export const siteConfig = {
     appleMusic: "https://music.apple.com/gb/artist/asher-simmons/1255170457",
     youtube: "https://youtube.com/ashersimmonsmusic",
     tiktok: "https://www.tiktok.com/@ashersimmons",
-    bandcamp: "https://bandcamp.com/",
   },
   origin: {
     // Where Asher is from / grew up — the "roots" side of the Bahamas → Bristol

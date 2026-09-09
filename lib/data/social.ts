@@ -11,5 +11,4 @@ export const socialLinks: SocialLink[] = [
   },
   { platform: "youtube", url: siteConfig.social.youtube, label: "YouTube" },
   { platform: "tiktok", url: siteConfig.social.tiktok, label: "TikTok" },
-  { platform: "bandcamp", url: siteConfig.social.bandcamp, label: "Bandcamp" },
 ];
