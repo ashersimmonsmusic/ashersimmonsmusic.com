@@ -18,11 +18,11 @@ export const siteConfig = {
     "Abaco Bahamas music",
   ],
   social: {
-    instagram: "https://instagram.com/",
-    spotify: "https://open.spotify.com/",
-    appleMusic: "https://music.apple.com/",
-    youtube: "https://youtube.com/",
-    tiktok: "https://tiktok.com/",
+    instagram: "https://instagram.com/ashersimmonsmusic",
+    spotify: "https://open.spotify.com/artist/22og2sDepSCdRuWx7LamgB",
+    appleMusic: "https://music.apple.com/gb/artist/asher-simmons/1255170457",
+    youtube: "https://youtube.com/ashersimmonsmusic",
+    tiktok: "https://www.tiktok.com/@ashersimmons",
     bandcamp: "https://bandcamp.com/",
   },
   origin: {
