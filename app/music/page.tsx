@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Container, Eyebrow } from "@/components/ui/container";
-import { ReleaseCard } from "@/components/releases/release-card";
-import { getReleases } from "@/lib/sanity/queries";
+import { UntitledStreamEmbed } from "@/components/music/untitled-stream-embed";
 
 export const metadata: Metadata = {
   title: "Music",
@@ -10,9 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/music" },
 };
 
-export default async function MusicPage() {
-  const releases = await getReleases();
-
+export default function MusicPage() {
   return (
     <Container className="py-16 md:py-24">
       <Eyebrow>Discography</Eyebrow>
@@ -21,14 +18,10 @@ export default async function MusicPage() {
       </h1>
       <p className="mt-6 max-w-xl text-paper-dim">
         Every release, from loosies to full projects — Hip-Hop and Afrobeat,
-        produced, engineered and written by Asher.
+        produced, engineered and written by Asher. Streaming live below.
       </p>
 
-      <div className="mt-16 grid grid-cols-2 gap-x-6 gap-y-14 sm:grid-cols-3 lg:grid-cols-4">
-        {releases.map((release) => (
-          <ReleaseCard key={release._id} release={release} />
-        ))}
-      </div>
+      <UntitledStreamEmbed className="mt-16" />
     </Container>
   );
 }
