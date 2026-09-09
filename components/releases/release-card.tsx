@@ -16,8 +16,8 @@ export function ReleaseCard({ release }: { release: Release }) {
         </div>
       </div>
       <Link href={`/release/${release.slug}`} className="mt-4 block">
-        <h3 className="font-display text-xl font-medium group-hover:text-cobalt">{release.title}</h3>
-        <p className="font-mono-label mt-1 text-sea-mist">
+        <h3 className="font-display text-xl font-medium group-hover:text-sun">{release.title}</h3>
+        <p className="font-mono-label mt-1 text-paper-dim">
           {release.releaseType} · {formatDate(release.releaseDate)}
         </p>
       </Link>

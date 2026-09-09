@@ -14,9 +14,8 @@ const ABBR: Record<SocialPlatform, string> = {
 };
 
 /**
- * Two-letter mono marks in 38px squares — no brand-coloured glyphs, per the
- * brand book's social icon spec. A tasteful, on-brand stand-in for platform
- * logos that still reads clearly as "follow us here."
+ * Two-letter mono marks in small squares — a tasteful, on-brand stand-in
+ * for platform logos that still reads clearly as "follow us here."
  */
 export function SocialIcons({ className }: { className?: string }) {
   return (
@@ -27,7 +26,7 @@ export function SocialIcons({ className }: { className?: string }) {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono-label flex size-[38px] items-center justify-center border border-current/30 text-[11px] text-current transition-colors hover:border-cobalt hover:text-cobalt"
+            className="font-mono-label flex size-[38px] items-center justify-center border border-current/30 text-[11px] text-current transition-colors hover:border-sun hover:text-sun"
           >
             {ABBR[link.platform]}
             <VisuallyHidden>{link.label}</VisuallyHidden>

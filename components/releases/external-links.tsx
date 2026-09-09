@@ -16,7 +16,7 @@ export function ExternalLinks({ links }: { links: ExternalLinksType }) {
 
   if (entries.length === 0) {
     return (
-      <p className="font-mono-label text-sea-mist">Streaming links coming soon</p>
+      <p className="font-mono-label text-paper-dim">Streaming links coming soon</p>
     );
   }
 
@@ -28,7 +28,7 @@ export function ExternalLinks({ links }: { links: ExternalLinksType }) {
             href={links[key]}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono-label inline-flex items-center gap-1.5 border border-current/30 px-4 py-2.5 hover:border-cobalt hover:text-cobalt"
+            className="font-mono-label inline-flex items-center gap-1.5 border border-current/30 px-4 py-2.5 hover:border-sun hover:text-sun"
           >
             {LABELS[key]}
             <ExternalLink className="size-3" aria-hidden />

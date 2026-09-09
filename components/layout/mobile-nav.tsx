@@ -6,7 +6,6 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { mainNav } from "@/lib/nav";
 import { VisuallyHidden } from "@/components/ui/visually-hidden";
-import { Wordmark } from "@/components/brand/wordmark";
 
 const emptySubscribe = () => () => {};
 
@@ -40,7 +39,7 @@ export function MobileNav() {
         onClick={() => setOpen(true)}
         aria-expanded={open}
         aria-controls="mobile-nav"
-        className="flex size-10 items-center justify-center text-bone"
+        className="flex size-10 items-center justify-center text-paper"
       >
         <Menu className="size-6" aria-hidden />
         <VisuallyHidden>Open menu</VisuallyHidden>
@@ -54,14 +53,14 @@ export function MobileNav() {
             role="dialog"
             aria-modal="true"
             aria-label="Site navigation"
-            className="fixed inset-0 z-[60] flex flex-col bg-navy px-6 py-6"
+            className="fixed inset-0 z-[60] flex flex-col bg-ink px-6 py-6"
           >
             <div className="flex items-center justify-between">
-              <Wordmark className="text-lg" />
+              <span className="font-display text-lg font-medium">Asher Simmons</span>
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="flex size-10 items-center justify-center text-bone"
+                className="flex size-10 items-center justify-center text-paper"
                 autoFocus
               >
                 <X className="size-6" aria-hidden />
@@ -75,7 +74,7 @@ export function MobileNav() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="font-display border-b border-line py-4 text-[28px] hover:text-cobalt"
+                  className="font-display border-b border-line py-4 text-4xl font-medium tracking-tight hover:text-sun"
                 >
                   {item.label}
                 </Link>
@@ -85,7 +84,7 @@ export function MobileNav() {
             <Link
               href="/music"
               onClick={() => setOpen(false)}
-              className="font-mono-label bg-gold px-6 py-4 text-center text-sm font-bold text-navy"
+              className="font-mono-label bg-sun px-6 py-4 text-center text-sm font-bold text-sun-ink"
             >
               Listen
             </Link>

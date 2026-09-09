@@ -44,14 +44,14 @@ export default async function LivePage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover grayscale contrast-110"
+          className="object-cover"
         />
       </div>
 
       <Container className="py-16 md:py-24">
         {upcoming.length === 0 ? (
           <div className="max-w-xl border-t border-line pt-10">
-            <p className="text-lg text-sea-mist">
+            <p className="text-lg text-paper-dim">
               No shows are currently on the books. Asher has performed at
               Glastonbury, Love Saves The Day, Boomtown, Forwards Festival and
               Bristol Beacon — new dates will be announced here first.
@@ -63,18 +63,18 @@ export default async function LivePage() {
               <li key={event._id} className="flex flex-wrap items-center justify-between gap-4 py-6">
                 <div>
                   <p className="font-display text-2xl font-medium md:text-3xl">{event.name}</p>
-                  <p className="font-mono-label mt-1 text-sea-mist">
+                  <p className="font-mono-label mt-1 text-paper-dim">
                     {formatDate(event.date)} · {event.venue}, {event.city}
                   </p>
                 </div>
                 <div className="flex items-center gap-4">
-                  <span className="font-mono-label text-sea-mist">{STATUS_LABEL[event.status]}</span>
+                  <span className="font-mono-label text-paper-dim">{STATUS_LABEL[event.status]}</span>
                   {event.ticketUrl && event.status === "confirmed" && (
                     <a
                       href={event.ticketUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-mono-label bg-gold px-5 py-2.5 font-bold text-navy transition-colors hover:bg-sunlight"
+                      className="font-mono-label bg-sun px-5 py-2.5 font-bold text-sun-ink"
                     >
                       Tickets
                     </a>
@@ -87,21 +87,21 @@ export default async function LivePage() {
 
         <div className="mt-20">
           <Eyebrow>Watch</Eyebrow>
-          <p className="mt-4 max-w-xl text-sea-mist">Live performances, straight from the stage.</p>
+          <p className="mt-4 max-w-xl text-paper-dim">Live performances, straight from the stage.</p>
           <div className="mt-8 space-y-6">
             {livePlaylist && (
               <YouTubePlaylistEmbed playlistId={livePlaylist.id} title={livePlaylist.title} />
             )}
             <VideoGrid videos={videos} />
             {!livePlaylist && videos.length === 0 && (
-              <p className="max-w-xl text-sea-mist">Performance videos coming soon.</p>
+              <p className="max-w-xl text-paper-dim">Performance videos coming soon.</p>
             )}
           </div>
         </div>
 
         <div className="mt-20">
           <Eyebrow>Selected Moments</Eyebrow>
-          <p className="mt-4 max-w-xl text-sea-mist">
+          <p className="mt-4 max-w-xl text-paper-dim">
             On stage — Next Level, Bristol, and beyond.
           </p>
           <div className="mt-8">

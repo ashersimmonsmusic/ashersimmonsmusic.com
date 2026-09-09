@@ -33,7 +33,7 @@ export function PlayReleaseButton({
       onClick={handleClick}
       aria-label={isPlaying ? `Pause ${release.title}` : `Play ${release.title}`}
       className={cn(
-        "flex items-center justify-center rounded-full bg-cobalt text-bone transition-colors duration-200 ease-[var(--ease-brand)] hover:bg-caribbean",
+        "flex items-center justify-center rounded-full bg-sun text-sun-ink transition-transform duration-200 ease-[var(--ease-editorial)] hover:scale-105",
         size === "lg" ? "size-16" : "size-11",
         className,
       )}

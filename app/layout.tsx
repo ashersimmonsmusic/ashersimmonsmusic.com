@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Archivo, Instrument_Serif, Rock_Salt, DM_Mono } from "next/font/google";
+import { Fraunces, Archivo, Space_Mono } from "next/font/google";
 import { MotionConfig } from "motion/react";
 import { siteConfig } from "@/lib/site-config";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -9,29 +9,22 @@ import { GlobalPlayer } from "@/components/music/global-player";
 import { PlausibleAnalytics } from "@/components/analytics/plausible";
 import "./globals.css";
 
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  axes: ["opsz", "SOFT", "WONK"],
+});
+
 const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],
-  weight: ["400", "600", "800", "900"],
 });
 
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
+const spaceMono = Space_Mono({
+  variable: "--font-space-mono",
   subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-});
-
-const rockSalt = Rock_Salt({
-  variable: "--font-rock-salt",
-  subsets: ["latin"],
-  weight: "400",
-});
-
-const dmMono = DM_Mono({
-  variable: "--font-dm-mono",
-  subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -65,15 +58,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${archivo.variable} ${instrumentSerif.variable} ${rockSalt.variable} ${dmMono.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${archivo.variable} ${spaceMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-navy text-bone">
+      <body className="flex min-h-full flex-col bg-ink text-paper">
         <PlausibleAnalytics />
         <MotionConfig reducedMotion="user">
           <PlayerProvider>
             <a
               href="#main-content"
-              className="font-mono-label sr-only bg-gold px-4 py-2 text-navy focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100]"
+              className="font-mono-label sr-only bg-sun px-4 py-2 text-sun-ink focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100]"
             >
               Skip to content
             </a>

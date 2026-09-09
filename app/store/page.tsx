@@ -17,10 +17,10 @@ export default function StorePage() {
       <h1 className="font-display mt-4 max-w-3xl text-5xl font-medium tracking-tight md:text-7xl">
         Store
       </h1>
-      <p className="mt-6 max-w-xl text-sea-mist">
+      <p className="mt-6 max-w-xl text-paper-dim">
         Digital albums, singles, beat packs and exclusive releases. Checkout
         is being finalised — enquire via{" "}
-        <a href="/contact" className="underline hover:text-cobalt">
+        <a href="/contact" className="underline hover:text-sun">
           contact
         </a>{" "}
         in the meantime.
@@ -31,12 +31,12 @@ export default function StorePage() {
           <article key={product.id}>
             <div className="relative">
               <ReleaseArtwork title={product.title} alt={product.title} />
-              <Badge className="absolute top-3 left-3 bg-navy/80">
+              <Badge className="absolute top-3 left-3 bg-ink/80">
                 {product.availability === "coming-soon" ? "Coming Soon" : product.availability}
               </Badge>
             </div>
             <h3 className="font-display mt-4 text-xl font-medium">{product.title}</h3>
-            <p className="font-mono-label mt-1 text-sea-mist">{formatPrice(product.priceGBP)}</p>
+            <p className="font-mono-label mt-1 text-paper-dim">{formatPrice(product.priceGBP)}</p>
           </article>
         ))}
       </div>

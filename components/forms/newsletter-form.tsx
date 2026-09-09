@@ -38,9 +38,9 @@ export function NewsletterForm({ className }: { className?: string }) {
         </Button>
       </div>
       <div role="status" aria-live="polite" className="mt-3 min-h-[1.25rem] text-sm">
-        {state.status === "success" && <p className="text-cobalt">You&apos;re on the list.</p>}
+        {state.status === "success" && <p className="text-sun">You&apos;re on the list.</p>}
         {state.status === "error" && (
-          <p id="newsletter-error" className="text-cobalt">
+          <p id="newsletter-error" className="text-sun">
             {state.message}
           </p>
         )}

@@ -6,7 +6,7 @@ import type { Release } from "@/lib/types";
 
 export function MusicPreview({ releases }: { releases: Release[] }) {
   return (
-    <section className="section-paper border-b border-line-on-paper py-20 md:py-28">
+    <section className="section-paper border-b border-line py-20 md:py-28">
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-6">
           <Reveal>
@@ -15,14 +15,14 @@ export function MusicPreview({ releases }: { releases: Release[] }) {
               Selected releases
             </h2>
           </Reveal>
-          <Link href="/music" className="font-mono-label border-b border-current pb-0.5 hover:text-cobalt">
+          <Link href="/music" className="font-mono-label border-b border-current pb-0.5 hover:text-sea">
             View all music
           </Link>
         </div>
 
         <div className="mt-14 grid grid-cols-2 gap-x-6 gap-y-12 md:grid-cols-4">
           {releases.map((release, i) => (
-            <Reveal key={release._id} delay={i * 0.06}>
+            <Reveal key={release._id} delay={i * 0.05}>
               <ReleaseCard release={release} />
             </Reveal>
           ))}

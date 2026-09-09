@@ -18,13 +18,13 @@ export default function ContactPage() {
           <h1 className="font-display mt-4 text-5xl leading-[0.95] font-medium tracking-tight md:text-7xl">
             Get in touch
           </h1>
-          <p className="mt-6 max-w-sm text-sea-mist">
+          <p className="mt-6 max-w-sm text-paper-dim">
             Bookings, production enquiries, press or just to say hello — the
             form reaches Asher&apos;s team directly.
           </p>
 
           <div className="mt-12">
-            <p className="font-mono-label mb-4 text-sea-mist">Follow</p>
+            <p className="font-mono-label mb-4 text-paper-dim">Follow</p>
             <SocialIcons />
           </div>
         </div>

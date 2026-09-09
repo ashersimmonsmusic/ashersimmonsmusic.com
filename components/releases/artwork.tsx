@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { CrownMark } from "@/components/brand/crown-mark";
+import { RouteMotif } from "@/components/brand/route-motif";
 
 function initials(title: string) {
   return title
@@ -37,7 +37,7 @@ export function ReleaseArtwork({
 }) {
   if (url) {
     return (
-      <div className={cn("relative aspect-square overflow-hidden bg-deep-water", className)}>
+      <div className={cn("relative aspect-square overflow-hidden bg-ink-raised", className)}>
         <Image
           src={url}
           alt={alt}
@@ -53,20 +53,20 @@ export function ReleaseArtwork({
   return (
     <div
       className={cn(
-        "relative flex aspect-square items-center justify-center overflow-hidden bg-deep-water",
+        "relative flex aspect-square items-center justify-center overflow-hidden bg-ink-raised",
         className,
       )}
       role="img"
       aria-label={alt}
     >
-      <CrownMark
-        className="absolute inset-x-0 top-1/2 mx-auto h-[28%] w-[28%] -translate-y-1/2 text-gold/25"
-        style={{ transform: `translateY(-50%) ${motifTransform(title)}` }}
+      <RouteMotif
+        className="absolute inset-4 h-[calc(100%-2rem)] w-[calc(100%-2rem)] text-paper/[0.08]"
+        style={{ transform: motifTransform(title) }}
       />
-      <span className="font-display relative text-[18vw] leading-none text-bone/15 select-none lg:text-[4.5vw]">
+      <span className="font-display relative text-[18vw] leading-none font-black text-paper/15 select-none lg:text-[4.5vw]">
         {initials(title)}
       </span>
-      <span className="font-mono-label absolute bottom-3 left-3 text-[9px] text-bone/40">
+      <span className="font-mono-label absolute bottom-3 left-3 text-[9px] text-paper/40">
         Artwork TBA
       </span>
     </div>

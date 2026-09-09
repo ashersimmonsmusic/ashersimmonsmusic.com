@@ -21,7 +21,7 @@ export default async function ProductionPage() {
         <h1 className="font-display mt-4 max-w-3xl text-5xl font-medium tracking-tight md:text-7xl">
           Production &amp; Engineering
         </h1>
-        <p className="mt-6 max-w-xl text-sea-mist">
+        <p className="mt-6 max-w-xl text-paper-dim">
           Asher builds records from the ground up — production, beatmaking,
           sound engineering and creative direction, all under one roof.
         </p>

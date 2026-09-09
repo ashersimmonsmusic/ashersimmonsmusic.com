@@ -11,7 +11,7 @@ function Container({ className, ...props }: React.ComponentProps<"div">) {
 }
 
 function Eyebrow({ className, ...props }: React.ComponentProps<"p">) {
-  return <p className={cn("font-mono-label text-eyebrow text-gold", className)} {...props} />;
+  return <p className={cn("font-mono-label text-sun", className)} {...props} />;
 }
 
 export { Container, Eyebrow };
