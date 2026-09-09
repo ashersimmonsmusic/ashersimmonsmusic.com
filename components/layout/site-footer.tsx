@@ -58,7 +58,7 @@ export function SiteFooter() {
           </p>
           <p className="flex items-center gap-2">
             <RouteMotif className="h-3 w-8 text-sun/70" />
-            {siteConfig.origin.birthplace} → {siteConfig.origin.base}
+            {siteConfig.origin.roots} → {siteConfig.origin.base}
           </p>
         </div>
       </div>

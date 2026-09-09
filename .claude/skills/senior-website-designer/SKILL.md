@@ -908,7 +908,7 @@ Asher Simmons is a Caribbean rapper, producer, sound engineer, songwriter and be
 
 He is based in Bristol, UK.
 
-He was born in Dundas Town, Abaco, Bahamas.
+He was born in Bermuda and raised in Dundas Town, Abaco, Bahamas — the Bahamian upbringing, not the birthplace, is the identity he draws on.
 
 His musical world includes:
 

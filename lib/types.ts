@@ -123,7 +123,10 @@ export type ArtistProfile = {
   tagline: string;
   bio: string;
   bioShort: string;
+  /** Literal country of birth. */
   birthplace: string;
+  /** Where the artist grew up / identifies as from — distinct from birthplace. */
+  raisedIn: string;
   base: string;
   portrait?: SanityImage;
   achievements: Achievement[];

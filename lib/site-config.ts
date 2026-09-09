@@ -26,7 +26,10 @@ export const siteConfig = {
     bandcamp: "https://bandcamp.com/",
   },
   origin: {
-    birthplace: "Dundas Town, Abaco, Bahamas",
+    // Where Asher is from / grew up — the "roots" side of the Bahamas → Bristol
+    // story. His literal birthplace is Bermuda; see birthCountry below.
+    roots: "Dundas Town, Abaco, Bahamas",
+    birthCountry: "Bermuda",
     base: "Bristol, UK",
   },
   contactEmail: "hello@ashersimmonsmusic.com",

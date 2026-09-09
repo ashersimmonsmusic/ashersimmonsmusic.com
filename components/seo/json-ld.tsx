@@ -8,7 +8,7 @@ export function PersonJsonLd({ bio }: { bio: string }) {
     url: siteConfig.url,
     description: bio,
     jobTitle: ["Rapper", "Producer", "Sound Engineer", "Songwriter", "Beatmaker"],
-    birthPlace: siteConfig.origin.birthplace,
+    birthPlace: siteConfig.origin.birthCountry,
     homeLocation: {
       "@type": "Place",
       name: siteConfig.origin.base,
@@ -32,7 +32,7 @@ export function ArtistJsonLd() {
     genre: ["Hip-Hop", "Afrobeat"],
     foundingLocation: {
       "@type": "Place",
-      name: siteConfig.origin.birthplace,
+      name: siteConfig.origin.roots,
     },
     location: {
       "@type": "Place",
@@ -42,7 +42,7 @@ export function ArtistJsonLd() {
       "@type": "Person",
       name: siteConfig.name,
       jobTitle: ["Rapper", "Producer", "Sound Engineer", "Songwriter", "Beatmaker"],
-      birthPlace: siteConfig.origin.birthplace,
+      birthPlace: siteConfig.origin.birthCountry,
       homeLocation: siteConfig.origin.base,
     },
   };

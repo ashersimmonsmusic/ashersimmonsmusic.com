@@ -10,7 +10,13 @@ export const artist = defineType({
     defineField({ name: "tagline", type: "string", validation: (r) => r.required() }),
     defineField({ name: "bioShort", title: "Short Bio", type: "text", rows: 3 }),
     defineField({ name: "bio", title: "Full Bio", type: "text", rows: 12 }),
-    defineField({ name: "birthplace", type: "string" }),
+    defineField({ name: "birthplace", title: "Birthplace", type: "string" }),
+    defineField({
+      name: "raisedIn",
+      title: "Raised In",
+      type: "string",
+      description: "Where the artist grew up / identifies as from — distinct from birthplace.",
+    }),
     defineField({ name: "base", title: "Current Base", type: "string" }),
     defineField({
       name: "portrait",

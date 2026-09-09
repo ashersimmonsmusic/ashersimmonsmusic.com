@@ -7,7 +7,7 @@ import { getArtistProfile } from "@/lib/sanity/queries";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Asher Simmons — Caribbean rapper, producer and sound engineer, born in Dundas Town, Abaco, Bahamas, now based in Bristol, UK.",
+    "Asher Simmons — Caribbean rapper, producer and sound engineer, raised in Dundas Town, Abaco, Bahamas, now based in Bristol, UK.",
   alternates: { canonical: "/about" },
 };
 
@@ -33,6 +33,10 @@ export default async function AboutPage() {
             <div className="flex justify-between border-t border-line pt-3">
               <dt>Born</dt>
               <dd className="text-right">{artist.birthplace}</dd>
+            </div>
+            <div className="flex justify-between border-t border-line pt-3">
+              <dt>Raised</dt>
+              <dd className="text-right">{artist.raisedIn}</dd>
             </div>
             <div className="flex justify-between border-t border-line pt-3">
               <dt>Based</dt>

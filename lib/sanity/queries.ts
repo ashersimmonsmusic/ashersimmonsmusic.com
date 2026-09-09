@@ -61,7 +61,7 @@ export async function getReleaseBySlug(slug: string): Promise<Release | undefine
 export async function getArtistProfile(): Promise<ArtistProfile> {
   if (!isSanityConfigured || !sanityClient) return localArtistProfile;
   const query = `*[_type == "artist"][0]{
-    name, tagline, bioShort, bio, birthplace, base, portrait, achievements
+    name, tagline, bioShort, bio, birthplace, raisedIn, base, portrait, achievements
   }`;
   const doc = await sanityClient.fetch(query);
   if (!doc) return localArtistProfile;
