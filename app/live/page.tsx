@@ -5,7 +5,7 @@ import { PhotoGallery } from "@/components/live/photo-gallery";
 import { formatDate } from "@/lib/utils";
 import { getLiveEvents } from "@/lib/sanity/queries";
 import { filterUpcoming } from "@/lib/data/events";
-import { heroLivePhoto, liveGalleryPhotos } from "@/lib/data/live-photos";
+import { liveHeroBand, liveGalleryPhotos } from "@/lib/data/live-photos";
 import type { EventStatus } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -36,8 +36,8 @@ export default async function LivePage() {
 
       <div className="relative aspect-[16/9] w-full md:aspect-[21/9]">
         <Image
-          src={liveGalleryPhotos[0].url}
-          alt={liveGalleryPhotos[0].alt}
+          src={liveHeroBand.url}
+          alt={liveHeroBand.alt}
           fill
           priority
           sizes="100vw"
@@ -88,7 +88,7 @@ export default async function LivePage() {
             On stage — Next Level, Bristol, and beyond.
           </p>
           <div className="mt-8">
-            <PhotoGallery photos={[heroLivePhoto, ...liveGalleryPhotos.slice(1)]} />
+            <PhotoGallery photos={liveGalleryPhotos} />
           </div>
         </div>
       </Container>
