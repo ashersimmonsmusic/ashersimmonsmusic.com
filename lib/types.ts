@@ -65,6 +65,14 @@ export type LiveEvent = {
   status: EventStatus;
 };
 
+export type LiveVideo = {
+  _id: string;
+  title: string;
+  youtubeUrl: string;
+  venue?: string;
+  date?: string;
+};
+
 export type ServiceCategory =
   | "production"
   | "beatmaking"

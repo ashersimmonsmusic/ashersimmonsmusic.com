@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Container, Eyebrow } from "@/components/ui/container";
 import { PhotoGallery } from "@/components/live/photo-gallery";
+import { VideoGrid } from "@/components/live/video-grid";
 import { formatDate } from "@/lib/utils";
-import { getLiveEvents } from "@/lib/sanity/queries";
+import { getLiveEvents, getLiveVideos } from "@/lib/sanity/queries";
 import { filterUpcoming } from "@/lib/data/events";
 import { liveHeroBand, liveGalleryPhotos } from "@/lib/data/live-photos";
 import type { EventStatus } from "@/lib/types";
@@ -22,7 +23,7 @@ const STATUS_LABEL: Record<EventStatus, string> = {
 };
 
 export default async function LivePage() {
-  const events = await getLiveEvents();
+  const [events, videos] = await Promise.all([getLiveEvents(), getLiveVideos()]);
   const upcoming = filterUpcoming(events);
 
   return (
@@ -81,6 +82,14 @@ export default async function LivePage() {
             ))}
           </ul>
         )}
+
+        <div className="mt-20">
+          <Eyebrow>Watch</Eyebrow>
+          <p className="mt-4 max-w-xl text-paper-dim">Live performances, straight from the stage.</p>
+          <div className="mt-8">
+            <VideoGrid videos={videos} />
+          </div>
+        </div>
 
         <div className="mt-20">
           <Eyebrow>Selected Moments</Eyebrow>

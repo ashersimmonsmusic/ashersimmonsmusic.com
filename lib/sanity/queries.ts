@@ -3,6 +3,7 @@ import type {
   ArtistProfile,
   Article,
   LiveEvent,
+  LiveVideo,
   PressMention,
   Release,
   Service,
@@ -14,6 +15,7 @@ import { events as localEvents } from "@/lib/data/events";
 import { services as localServices } from "@/lib/data/services";
 import { pressMentions as localPressMentions } from "@/lib/data/press";
 import { socialLinks as localSocialLinks } from "@/lib/data/social";
+import { liveVideos as localLiveVideos } from "@/lib/data/live-videos";
 
 // Each getter reads from Sanity when a project is connected, and otherwise
 // falls back to the local placeholder content in lib/data. This keeps every
@@ -102,5 +104,11 @@ export async function getPressMentions(): Promise<PressMention[]> {
 export async function getSocialLinks(): Promise<SocialLink[]> {
   if (!isSanityConfigured || !sanityClient) return localSocialLinks;
   const query = `*[_type == "socialLink"]{ platform, url, label }`;
+  return sanityClient.fetch(query);
+}
+
+export async function getLiveVideos(): Promise<LiveVideo[]> {
+  if (!isSanityConfigured || !sanityClient) return localLiveVideos;
+  const query = `*[_type == "liveVideo"] | order(date desc){ _id, title, youtubeUrl, venue, date }`;
   return sanityClient.fetch(query);
 }

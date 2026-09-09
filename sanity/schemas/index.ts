@@ -6,6 +6,7 @@ import { service } from "./service";
 import { article } from "./article";
 import { pressMention } from "./pressMention";
 import { socialLink } from "./socialLink";
+import { liveVideo } from "./liveVideo";
 
 export const schemaTypes = [
   artist,
@@ -16,4 +17,5 @@ export const schemaTypes = [
   article,
   pressMention,
   socialLink,
+  liveVideo,
 ];
