@@ -46,7 +46,10 @@ export const releases: Release[] = [
     title: "Thanks and Praises",
     releaseType: "album",
     releaseDate: "2025",
-    artwork: { url: "", alt: "Thanks and Praises artwork" },
+    artwork: {
+      url: "/images/releases/thanks-and-praises.jpg",
+      alt: "Thanks and Praises cover art — a painting of a tree with its roots exposed in cross-section beneath the soil, set against a bright cloudy sky",
+    },
     description: "",
     tracklist: [],
     credits: [],
