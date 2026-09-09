@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Container, Eyebrow } from "@/components/ui/container";
 import { ContactForm } from "@/components/forms/contact-form";
-import { socialLinks } from "@/lib/data/social";
+import { SocialIcons } from "@/components/brand/social-icons";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -25,20 +25,7 @@ export default function ContactPage() {
 
           <div className="mt-12">
             <p className="font-mono-label mb-4 text-sea-mist">Follow</p>
-            <ul className="space-y-2">
-              {socialLinks.map((link) => (
-                <li key={link.platform}>
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-cobalt"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <SocialIcons />
           </div>
         </div>
 

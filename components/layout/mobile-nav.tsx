@@ -8,13 +8,15 @@ import { mainNav } from "@/lib/nav";
 import { VisuallyHidden } from "@/components/ui/visually-hidden";
 import { Wordmark } from "@/components/brand/wordmark";
 
+const emptySubscribe = () => () => {};
+
 export function MobileNav() {
   const [open, setOpen] = React.useState(false);
-  const [mounted, setMounted] = React.useState(false);
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = React.useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false,
+  );
 
   React.useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {

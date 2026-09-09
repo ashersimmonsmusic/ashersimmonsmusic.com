@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { mainNav } from "@/lib/nav";
-import { socialLinks } from "@/lib/data/social";
 import { siteConfig } from "@/lib/site-config";
 import { NewsletterForm } from "@/components/forms/newsletter-form";
 import { CrownMark } from "@/components/brand/crown-mark";
+import { SocialIcons } from "@/components/brand/social-icons";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -35,20 +35,7 @@ export function SiteFooter() {
 
           <div>
             <p className="font-mono-label text-sea-mist">Follow</p>
-            <ul className="mt-4 space-y-3">
-              {socialLinks.map((link) => (
-                <li key={link.platform}>
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-cobalt"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <SocialIcons className="mt-4" />
           </div>
         </div>
 
