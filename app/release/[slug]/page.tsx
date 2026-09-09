@@ -37,22 +37,28 @@ export default async function ReleasePage(props: PageProps<"/release/[slug]">) {
   const release = await getReleaseBySlug(slug);
   if (!release) notFound();
 
+  // Skip the artwork placeholder when a real player already fills that
+  // visual role — a "TBA" box sitting above a working embed looks unfinished.
+  const showArtwork = Boolean(release.artwork.url) || !release.untitledEmbedId;
+
   return (
     <Container className="py-16 md:py-24">
       <div className="grid gap-12 lg:grid-cols-[minmax(0,420px)_1fr] lg:gap-20">
         <div>
-          <ReleaseArtwork
-            title={release.title}
-            url={release.artwork.url}
-            alt={release.artwork.alt}
-            priority
-            sizes="(min-width: 1024px) 420px, 100vw"
-          />
+          {showArtwork && (
+            <ReleaseArtwork
+              title={release.title}
+              url={release.artwork.url}
+              alt={release.artwork.alt}
+              priority
+              sizes="(min-width: 1024px) 420px, 100vw"
+            />
+          )}
           {release.untitledEmbedId ? (
             <UntitledTrackEmbed
               embedId={release.untitledEmbedId}
               title={release.title}
-              className="mt-6"
+              className={showArtwork ? "mt-6" : undefined}
             />
           ) : (
             <div className="mt-6 flex items-center gap-5">
