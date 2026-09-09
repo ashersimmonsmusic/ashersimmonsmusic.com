@@ -25,3 +25,15 @@ export function getYouTubeId(url: string): string | null {
 export function youtubeThumbnailUrl(videoId: string): string {
   return `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
 }
+
+/** Extracts the `list` (playlist) ID from a YouTube playlist or watch+list URL. */
+export function getYouTubePlaylistId(url: string): string | null {
+  try {
+    const parsed = new URL(url);
+    const host = parsed.hostname.replace(/^www\./, "");
+    if (!host.endsWith("youtube.com")) return null;
+    return parsed.searchParams.get("list");
+  } catch {
+    return null;
+  }
+}

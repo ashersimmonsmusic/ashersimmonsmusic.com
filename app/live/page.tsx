@@ -3,10 +3,12 @@ import Image from "next/image";
 import { Container, Eyebrow } from "@/components/ui/container";
 import { PhotoGallery } from "@/components/live/photo-gallery";
 import { VideoGrid } from "@/components/live/video-grid";
+import { YouTubePlaylistEmbed } from "@/components/live/youtube-playlist-embed";
 import { formatDate } from "@/lib/utils";
 import { getLiveEvents, getLiveVideos } from "@/lib/sanity/queries";
 import { filterUpcoming } from "@/lib/data/events";
 import { liveHeroBand, liveGalleryPhotos } from "@/lib/data/live-photos";
+import { livePlaylist } from "@/lib/data/live-videos";
 import type { EventStatus } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -86,8 +88,14 @@ export default async function LivePage() {
         <div className="mt-20">
           <Eyebrow>Watch</Eyebrow>
           <p className="mt-4 max-w-xl text-paper-dim">Live performances, straight from the stage.</p>
-          <div className="mt-8">
+          <div className="mt-8 space-y-6">
+            {livePlaylist && (
+              <YouTubePlaylistEmbed playlistId={livePlaylist.id} title={livePlaylist.title} />
+            )}
             <VideoGrid videos={videos} />
+            {!livePlaylist && videos.length === 0 && (
+              <p className="max-w-xl text-paper-dim">Performance videos coming soon.</p>
+            )}
           </div>
         </div>
 

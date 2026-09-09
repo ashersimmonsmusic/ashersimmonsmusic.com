@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getYouTubeId, youtubeThumbnailUrl } from "@/lib/youtube";
+import { getYouTubeId, getYouTubePlaylistId, youtubeThumbnailUrl } from "@/lib/youtube";
 
 describe("getYouTubeId", () => {
   it("parses a standard watch URL", () => {
@@ -28,6 +28,30 @@ describe("getYouTubeId", () => {
 
   it("returns null for garbage input", () => {
     expect(getYouTubeId("not a url")).toBeNull();
+  });
+});
+
+describe("getYouTubePlaylistId", () => {
+  it("parses a playlist URL", () => {
+    expect(
+      getYouTubePlaylistId(
+        "https://youtube.com/playlist?list=PLFRYu8FqywGE8NmM9vJ-KFp5ChVKBP8mk&si=aRRi4jKkP-WJ25Eu",
+      ),
+    ).toBe("PLFRYu8FqywGE8NmM9vJ-KFp5ChVKBP8mk");
+  });
+
+  it("parses a watch URL that includes a list param", () => {
+    expect(
+      getYouTubePlaylistId("https://www.youtube.com/watch?v=abc123&list=PLxyz"),
+    ).toBe("PLxyz");
+  });
+
+  it("returns null when there is no list param", () => {
+    expect(getYouTubePlaylistId("https://www.youtube.com/watch?v=abc123")).toBeNull();
+  });
+
+  it("returns null for a non-YouTube URL", () => {
+    expect(getYouTubePlaylistId("https://vimeo.com/12345?list=x")).toBeNull();
   });
 });
 

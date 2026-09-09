@@ -2,9 +2,7 @@ import { YouTubeEmbed } from "@/components/live/youtube-embed";
 import type { LiveVideo } from "@/lib/types";
 
 export function VideoGrid({ videos }: { videos: LiveVideo[] }) {
-  if (videos.length === 0) {
-    return <p className="max-w-xl text-paper-dim">Performance videos coming soon.</p>;
-  }
+  if (videos.length === 0) return null;
 
   return (
     <ul className="grid gap-6 md:grid-cols-2">
