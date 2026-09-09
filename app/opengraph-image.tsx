@@ -20,7 +20,7 @@ export default async function Image() {
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", fontSize: 28, letterSpacing: 4, color: "#ff5a2b" }}>
+        <div style={{ display: "flex", fontSize: 28, letterSpacing: 4, color: "#c8a24a" }}>
           DUNDAS TOWN, ABACO → BRISTOL, UK
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
