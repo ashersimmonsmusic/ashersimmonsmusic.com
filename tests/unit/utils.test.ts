@@ -14,6 +14,10 @@ describe("formatDate", () => {
   it("returns TBA for invalid dates", () => {
     expect(formatDate("not-a-date")).toBe("TBA");
   });
+
+  it("returns a bare year as-is instead of fabricating a day and month", () => {
+    expect(formatDate("2025")).toBe("2025");
+  });
 });
 
 describe("formatTime", () => {

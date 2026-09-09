@@ -7,6 +7,9 @@ export function cn(...inputs: ClassValue[]) {
 
 export function formatDate(dateString: string | null | undefined): string {
   if (!dateString) return "TBA";
+  // A bare year (no known month/day) — return as-is rather than defaulting
+  // to a fabricated 1 January.
+  if (/^\d{4}$/.test(dateString)) return dateString;
   const date = new Date(dateString);
   if (Number.isNaN(date.getTime())) return "TBA";
   return date.toLocaleDateString("en-GB", {

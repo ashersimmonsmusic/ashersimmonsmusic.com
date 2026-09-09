@@ -50,12 +50,11 @@ no CMS credentials. Once a Sanity project exists:
    surface small).
 
 **No real release dates, credits, streaming URLs or photography have been
-invented.** The seven releases named in the brief (`Open Letters to God`,
-`Brighter Days`, `Head In The Clouds`, `All In` ft. Przy, `Jireh`, `Changes`,
-`Fractal`) exist as placeholder records with those fields left empty — the
-UI shows "TBA" / "Coming soon" rather than fabricated data. Replace them via
-Sanity (or by editing `lib/data/releases.ts` directly) as real information
-arrives. The same applies to artist photography (a generated type-based
+invented.** The current releases (`Open Letters to God`, `Brighter Days`,
+`Thanks and Praises`) exist as placeholder records with unconfirmed fields
+left empty — the UI shows "TBA" / "Coming soon" rather than fabricated data.
+Replace them via Sanity (or by editing `lib/data/releases.ts` directly) as
+real information arrives. The same applies to artist photography (a generated type-based
 placeholder stands in for artwork/portraits), press mentions, and live
 events — the `/live` page intentionally shows an empty state rather than
 invented dates.
