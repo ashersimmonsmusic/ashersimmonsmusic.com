@@ -1,24 +1,37 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Typography */
-  --font-display: var(--font-fraunces);
+  /* Typography — Archivo carries headlines, UI and body; Instrument Serif is the
+     editorial voice (pull-quotes, mission statements); Rock Salt is the one
+     hand-mark accent; DM Mono is labels, credits and metadata. */
+  --font-display: var(--font-archivo);
   --font-sans: var(--font-archivo);
-  --font-mono: var(--font-space-mono);
+  --font-editorial: var(--font-instrument-serif);
+  --font-hand: var(--font-rock-salt);
+  --font-mono: var(--font-dm-mono);
 
-  /* Core palette — editorial ink & paper with a single Caribbean accent */
-  --color-ink: #0b0b09;
-  --color-ink-raised: #151310;
-  --color-paper: #f2ecdd;
-  --color-paper-dim: #a89f8b;
-  --color-paper-muted: #6b6455;
-  --color-sun: #ff5a2b;
-  --color-sun-ink: #2a1105;
-  --color-sea: #12615a;
-  --color-line: #35322a;
-  --color-line-on-paper: #d8cfb8;
+  /* Brand book colour system — blues share one hue family (200-215°) so they
+     read as one ocean at different depths; gold is a 42° accent held to ~5%
+     of any composition. */
+  --color-night: #050d18;
+  --color-navy: #071a2f;
+  --color-deep-water: #103a6b;
+  --color-cobalt: #1c63c8;
+  --color-caribbean: #2e9bd6;
+  --color-sea-mist: #8fc4de;
+  --color-gold: #c8a24a;
+  --color-sunlight: #e3c57a;
+  --color-bronze: #8c6b22;
+  --color-bone: #faf8f4;
+  --color-concrete: #e8e4dc;
+  --color-street-black: #0a0a0a;
 
-  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Structural rule colours — derived per the brand book's own spec rather
+     than picked freely. */
+  --color-line: rgb(250 248 244 / 22%);
+  --color-line-on-paper: #e8e4dc;
+
+  --ease-brand: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -33,42 +46,72 @@
 }
 
 html {
-  background: var(--color-ink);
+  background: var(--color-navy);
   color-scheme: dark;
 }
 
 body {
-  background: var(--color-ink);
-  color: var(--color-paper);
+  background: var(--color-navy);
+  color: var(--color-bone);
   font-family: var(--font-sans);
   font-feature-settings: "ss01" 1;
 }
 
 ::selection {
-  background: var(--color-sun);
-  color: var(--color-sun-ink);
+  background: var(--color-gold);
+  color: var(--color-navy);
 }
 
 /* Visible focus states everywhere — never suppressed. */
 :focus-visible {
-  outline: 2px solid var(--color-sun);
-  outline-offset: 3px;
+  outline: 2px solid var(--color-cobalt);
+  outline-offset: 2px;
 }
 
+/* Primary headline treatment: Archivo 900, tight tracking, uppercase,
+   tight leading — applies sitewide per the brand book's type rules. */
 .font-display {
   font-family: var(--font-display);
+  font-weight: 900;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+/* Editorial voice: pull-quotes, mission statements, album titles. Used
+   sparingly — never alongside .font-display in the same composition. */
+.font-editorial {
+  font-family: var(--font-editorial);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.15;
+}
+
+/* The one hand-mark accent. Never for information the reader needs, never
+   more than once per composition. */
+.font-hand {
+  font-family: var(--font-hand);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 .font-mono-label {
   font-family: var(--font-mono);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 /* Editorial "paper" sections invert the palette for magazine-style contrast. */
 .section-paper {
-  background: var(--color-paper);
-  color: var(--color-ink);
+  background: var(--color-bone);
+  color: var(--color-navy);
+}
+
+.section-paper .text-eyebrow {
+  color: var(--color-bronze);
 }
 
 .hairline {

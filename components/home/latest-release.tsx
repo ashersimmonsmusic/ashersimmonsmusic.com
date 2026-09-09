@@ -26,20 +26,20 @@ export function LatestRelease({ release }: { release: Release }) {
           </Reveal>
 
           <Reveal delay={0.1} className="order-1 lg:order-2">
-            <p className="font-mono-label text-paper-dim">
+            <p className="font-mono-label text-sea-mist">
               {release.releaseType} · {formatDate(release.releaseDate)}
             </p>
             <h2 className="font-display mt-4 text-5xl leading-[0.95] font-medium tracking-tight md:text-6xl">
               {release.title}
             </h2>
             {release.description && (
-              <p className="mt-6 max-w-md text-paper-dim">{release.description}</p>
+              <p className="mt-6 max-w-md text-sea-mist">{release.description}</p>
             )}
             <div className="mt-8 flex items-center gap-5">
               <PlayReleaseButton release={release} />
               <Link
                 href={`/release/${release.slug}`}
-                className="font-mono-label border-b border-current pb-0.5 hover:text-sun"
+                className="font-mono-label border-b border-current pb-0.5 hover:text-cobalt"
               >
                 View release
               </Link>

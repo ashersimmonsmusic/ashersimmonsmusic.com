@@ -9,7 +9,7 @@ export function Tracklist({ release }: { release: Release }) {
   const { state, currentTrack, playQueue, togglePlay } = usePlayer();
 
   if (release.tracklist.length === 0) {
-    return <p className="text-paper-dim">Tracklist to be announced.</p>;
+    return <p className="text-sea-mist">Tracklist to be announced.</p>;
   }
 
   return (

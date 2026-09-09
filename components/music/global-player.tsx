@@ -17,7 +17,7 @@ export function GlobalPlayer() {
     <div
       role="region"
       aria-label="Music player"
-      className="hairline fixed inset-x-0 bottom-0 z-50 border-t bg-ink/95 backdrop-blur"
+      className="hairline fixed inset-x-0 bottom-0 z-50 border-t bg-navy/95 backdrop-blur"
     >
       <div className="flex items-center gap-3 px-4 py-3 md:gap-6 md:px-8">
         <Link
@@ -32,10 +32,10 @@ export function GlobalPlayer() {
             sizes="48px"
           />
           <span className="hidden min-w-0 flex-col sm:flex">
-            <span className="truncate text-sm font-medium group-hover:text-sun">
+            <span className="truncate text-sm font-medium group-hover:text-cobalt">
               {currentTrack.title}
             </span>
-            <span className="font-mono-label truncate text-[10px] text-paper-dim">
+            <span className="font-mono-label truncate text-[10px] text-sea-mist">
               {currentTrack.releaseTitle}
             </span>
           </span>
@@ -47,7 +47,7 @@ export function GlobalPlayer() {
               type="button"
               onClick={previous}
               aria-label="Previous track"
-              className="text-paper/70 hover:text-sun disabled:opacity-30"
+              className="text-bone/70 hover:text-cobalt disabled:opacity-30"
               disabled={state.queue.length < 2}
             >
               <SkipBack className="size-4" fill="currentColor" />
@@ -57,7 +57,7 @@ export function GlobalPlayer() {
               onClick={togglePlay}
               aria-label={state.isPlaying ? "Pause" : hasAudio ? "Play" : "Preview unavailable"}
               disabled={!hasAudio}
-              className="flex size-10 items-center justify-center rounded-full bg-sun text-sun-ink disabled:opacity-30"
+              className="flex size-10 items-center justify-center rounded-full bg-cobalt text-bone transition-colors hover:bg-caribbean disabled:opacity-30"
             >
               {state.isPlaying ? (
                 <Pause className="size-4" fill="currentColor" />
@@ -69,7 +69,7 @@ export function GlobalPlayer() {
               type="button"
               onClick={next}
               aria-label="Next track"
-              className="text-paper/70 hover:text-sun disabled:opacity-30"
+              className="text-bone/70 hover:text-cobalt disabled:opacity-30"
               disabled={state.queue.length < 2}
             >
               <SkipForward className="size-4" fill="currentColor" />
@@ -77,7 +77,7 @@ export function GlobalPlayer() {
           </div>
 
           <div className="hidden w-full max-w-lg items-center gap-2 md:flex">
-            <span className="font-mono-label w-9 text-right text-[10px] text-paper-dim">
+            <span className="font-mono-label w-9 text-right text-[10px] text-sea-mist">
               {formatTime(state.currentTime)}
             </span>
             <input
@@ -88,22 +88,22 @@ export function GlobalPlayer() {
               onChange={(e) => seek(Number(e.target.value))}
               disabled={!hasAudio}
               aria-label="Seek"
-              className="player-range h-1 flex-1 accent-sun disabled:opacity-30"
+              className="player-range h-1 flex-1 accent-gold disabled:opacity-30"
             />
-            <span className="font-mono-label w-9 text-[10px] text-paper-dim">
+            <span className="font-mono-label w-9 text-[10px] text-sea-mist">
               {hasAudio ? formatTime(state.duration) : "—:—"}
             </span>
           </div>
           {!hasAudio && (
-            <p className="font-mono-label text-[9px] text-paper-dim md:hidden">Preview coming soon</p>
+            <p className="font-mono-label text-[9px] text-sea-mist md:hidden">Preview coming soon</p>
           )}
         </div>
 
         <div className="hidden shrink-0 items-center gap-2 lg:flex">
           {state.volume === 0 ? (
-            <VolumeX className="size-4 text-paper-dim" />
+            <VolumeX className="size-4 text-sea-mist" />
           ) : (
-            <Volume1 className="size-4 text-paper-dim" />
+            <Volume1 className="size-4 text-sea-mist" />
           )}
           <input
             type="range"
@@ -113,7 +113,7 @@ export function GlobalPlayer() {
             value={state.volume}
             onChange={(e) => setVolume(Number(e.target.value))}
             aria-label="Volume"
-            className="player-range h-1 w-20 accent-sun"
+            className="player-range h-1 w-20 accent-cobalt"
           />
         </div>
 
@@ -121,7 +121,7 @@ export function GlobalPlayer() {
           type="button"
           onClick={close}
           aria-label="Close player"
-          className="shrink-0 text-paper/50 hover:text-sun"
+          className="shrink-0 text-bone/50 hover:text-cobalt"
         >
           <X className="size-4" />
         </button>

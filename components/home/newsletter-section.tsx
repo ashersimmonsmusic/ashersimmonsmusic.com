@@ -11,7 +11,7 @@ export function NewsletterSection() {
           <h2 className="font-display mt-4 text-4xl font-medium tracking-tight md:text-6xl">
             Don&apos;t miss a drop.
           </h2>
-          <p className="mt-4 text-paper-dim">
+          <p className="mt-4 text-sea-mist">
             New releases, studio sessions and show announcements — no spam, unsubscribe anytime.
           </p>
           <NewsletterForm className="mx-auto mt-8 max-w-md text-left" />

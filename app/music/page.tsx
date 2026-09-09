@@ -19,7 +19,7 @@ export default async function MusicPage() {
       <h1 className="font-display mt-4 max-w-3xl text-5xl font-medium tracking-tight md:text-7xl">
         Music
       </h1>
-      <p className="mt-6 max-w-xl text-paper-dim">
+      <p className="mt-6 max-w-xl text-sea-mist">
         Every release, from loosies to full projects — Hip-Hop and Afrobeat,
         produced, engineered and written by Asher.
       </p>

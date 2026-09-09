@@ -47,7 +47,7 @@ export function ContactForm({ defaultSubject }: { defaultSubject?: ContactFormVa
         <div>
           <Label htmlFor="name">Name</Label>
           <Input id="name" className="mt-2" {...register("name")} aria-invalid={!!errors.name} />
-          {errors.name && <p className="mt-1 text-sm text-sun">{errors.name.message}</p>}
+          {errors.name && <p className="mt-1 text-sm text-cobalt">{errors.name.message}</p>}
         </div>
         <div>
           <Label htmlFor="email">Email</Label>
@@ -58,7 +58,7 @@ export function ContactForm({ defaultSubject }: { defaultSubject?: ContactFormVa
             {...register("email")}
             aria-invalid={!!errors.email}
           />
-          {errors.email && <p className="mt-1 text-sm text-sun">{errors.email.message}</p>}
+          {errors.email && <p className="mt-1 text-sm text-cobalt">{errors.email.message}</p>}
         </div>
       </div>
 
@@ -74,7 +74,7 @@ export function ContactForm({ defaultSubject }: { defaultSubject?: ContactFormVa
       <div>
         <Label htmlFor="message">Message</Label>
         <Textarea id="message" className="mt-2" {...register("message")} aria-invalid={!!errors.message} />
-        {errors.message && <p className="mt-1 text-sm text-sun">{errors.message.message}</p>}
+        {errors.message && <p className="mt-1 text-sm text-cobalt">{errors.message.message}</p>}
       </div>
 
       <div className="hidden" aria-hidden="true">
@@ -87,8 +87,8 @@ export function ContactForm({ defaultSubject }: { defaultSubject?: ContactFormVa
       </Button>
 
       <div role="status" aria-live="polite" className="min-h-[1.25rem] text-sm">
-        {status === "success" && <p className="text-sun">Message sent — thank you. Asher&apos;s team will be in touch.</p>}
-        {status === "error" && <p className="text-sun">{serverMessage}</p>}
+        {status === "success" && <p className="text-cobalt">Message sent — thank you. Asher&apos;s team will be in touch.</p>}
+        {status === "error" && <p className="text-cobalt">{serverMessage}</p>}
       </div>
     </form>
   );

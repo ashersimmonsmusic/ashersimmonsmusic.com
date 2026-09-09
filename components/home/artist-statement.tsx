@@ -8,12 +8,12 @@ export function ArtistStatement({ statement }: { statement: string }) {
       <Container>
         <Reveal>
           <Eyebrow>Artist Statement</Eyebrow>
-          <blockquote className="font-display mt-8 max-w-4xl text-3xl leading-[1.15] font-medium text-balance-pretty italic md:text-5xl">
+          <blockquote className="font-editorial mt-8 max-w-4xl text-3xl italic text-balance-pretty md:text-5xl">
             &ldquo;{statement}&rdquo;
           </blockquote>
           <Link
             href="/about"
-            className="font-mono-label mt-10 inline-block border-b border-current pb-0.5 hover:text-sun"
+            className="font-mono-label mt-10 inline-block border-b border-current pb-0.5 hover:text-cobalt"
           >
             Read the full story
           </Link>

@@ -13,11 +13,11 @@ export function Portrait({
   if (!url) {
     return (
       <div
-        className={cn("relative aspect-[4/5] bg-ink-raised", className)}
+        className={cn("relative aspect-[4/5] bg-deep-water", className)}
         role="img"
         aria-label={alt}
       >
-        <span className="font-mono-label absolute bottom-3 left-3 text-[9px] text-paper/40">
+        <span className="font-mono-label absolute bottom-3 left-3 text-[9px] text-bone/40">
           Portrait TBA
         </span>
       </div>
@@ -25,14 +25,14 @@ export function Portrait({
   }
 
   return (
-    <div className={cn("relative aspect-[4/5] overflow-hidden bg-ink-raised", className)}>
+    <div className={cn("relative aspect-[4/5] overflow-hidden bg-deep-water", className)}>
       <Image
         src={url}
         alt={alt}
         fill
         priority
         sizes="(min-width: 1024px) 33vw, 100vw"
-        className="object-cover object-top"
+        className="object-cover object-top grayscale contrast-110"
       />
     </div>
   );

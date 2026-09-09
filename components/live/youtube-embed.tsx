@@ -20,7 +20,7 @@ export function YouTubeEmbed({ video, className }: { video: LiveVideo; className
 
   if (playing) {
     return (
-      <div className={cn("relative aspect-video overflow-hidden bg-ink-raised", className)}>
+      <div className={cn("relative aspect-video overflow-hidden bg-deep-water", className)}>
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`}
           title={video.title}
@@ -37,7 +37,7 @@ export function YouTubeEmbed({ video, className }: { video: LiveVideo; className
       type="button"
       onClick={() => setPlaying(true)}
       className={cn(
-        "group relative aspect-video w-full overflow-hidden bg-ink-raised text-left",
+        "group relative aspect-video w-full overflow-hidden bg-deep-water text-left",
         className,
       )}
       aria-label={`Play video: ${video.title}`}
@@ -49,16 +49,16 @@ export function YouTubeEmbed({ video, className }: { video: LiveVideo; className
         sizes="(min-width: 768px) 50vw, 100vw"
         className="object-cover"
       />
-      <span className="absolute inset-0 bg-ink/20 transition-colors group-hover:bg-ink/10" />
+      <span className="absolute inset-0 bg-navy/20 transition-colors group-hover:bg-navy/10" />
       <span className="absolute inset-0 flex items-center justify-center">
-        <span className="flex size-16 items-center justify-center rounded-full bg-sun text-sun-ink transition-transform duration-200 ease-[var(--ease-editorial)] group-hover:scale-105">
+        <span className="flex size-16 items-center justify-center rounded-full bg-cobalt text-bone transition-colors duration-200 ease-[var(--ease-brand)] group-hover:bg-caribbean">
           <Play className="ml-1 size-6" fill="currentColor" />
         </span>
       </span>
-      <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 to-transparent p-4">
-        <span className="font-medium text-paper">{video.title}</span>
+      <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/90 to-transparent p-4">
+        <span className="font-medium text-bone">{video.title}</span>
         {(video.venue || video.date) && (
-          <span className="font-mono-label mt-0.5 block text-paper-dim">
+          <span className="font-mono-label mt-0.5 block text-sea-mist">
             {[video.venue, video.date].filter(Boolean).join(" · ")}
           </span>
         )}

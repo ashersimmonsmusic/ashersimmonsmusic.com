@@ -1,13 +1,20 @@
 "use client";
 
 import * as React from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { mainNav } from "@/lib/nav";
 import { VisuallyHidden } from "@/components/ui/visually-hidden";
+import { Wordmark } from "@/components/brand/wordmark";
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false);
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   React.useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -31,55 +38,58 @@ export function MobileNav() {
         onClick={() => setOpen(true)}
         aria-expanded={open}
         aria-controls="mobile-nav"
-        className="flex size-10 items-center justify-center text-paper"
+        className="flex size-10 items-center justify-center text-bone"
       >
         <Menu className="size-6" aria-hidden />
         <VisuallyHidden>Open menu</VisuallyHidden>
       </button>
 
-      {open && (
-        <div
-          id="mobile-nav"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Site navigation"
-          className="fixed inset-0 z-[60] flex flex-col bg-ink px-6 py-6"
-        >
-          <div className="flex items-center justify-between">
-            <span className="font-display text-lg font-medium">Asher Simmons</span>
-            <button
-              type="button"
-              onClick={() => setOpen(false)}
-              className="flex size-10 items-center justify-center text-paper"
-              autoFocus
-            >
-              <X className="size-6" aria-hidden />
-              <VisuallyHidden>Close menu</VisuallyHidden>
-            </button>
-          </div>
-
-          <nav className="mt-16 flex flex-1 flex-col gap-2">
-            {mainNav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="font-display border-b border-line py-4 text-4xl font-medium tracking-tight hover:text-sun"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-
-          <Link
-            href="/music"
-            onClick={() => setOpen(false)}
-            className="font-mono-label bg-sun px-6 py-4 text-center text-sm font-bold text-sun-ink"
+      {open &&
+        mounted &&
+        createPortal(
+          <div
+            id="mobile-nav"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site navigation"
+            className="fixed inset-0 z-[60] flex flex-col bg-navy px-6 py-6"
           >
-            Listen
-          </Link>
-        </div>
-      )}
+            <div className="flex items-center justify-between">
+              <Wordmark className="text-lg" />
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                className="flex size-10 items-center justify-center text-bone"
+                autoFocus
+              >
+                <X className="size-6" aria-hidden />
+                <VisuallyHidden>Close menu</VisuallyHidden>
+              </button>
+            </div>
+
+            <nav className="mt-16 flex flex-1 flex-col gap-2">
+              {mainNav.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="font-display border-b border-line py-4 text-[28px] hover:text-cobalt"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+
+            <Link
+              href="/music"
+              onClick={() => setOpen(false)}
+              className="font-mono-label bg-gold px-6 py-4 text-center text-sm font-bold text-navy"
+            >
+              Listen
+            </Link>
+          </div>,
+          document.body,
+        )}
     </div>
   );
 }

@@ -58,21 +58,21 @@ export default async function ReleasePage(props: PageProps<"/release/[slug]">) {
           <h1 className="font-display mt-4 text-5xl leading-[0.95] font-medium tracking-tight md:text-7xl">
             {release.title}
           </h1>
-          <p className="font-mono-label mt-4 text-paper-dim">{formatDate(release.releaseDate)}</p>
+          <p className="font-mono-label mt-4 text-sea-mist">{formatDate(release.releaseDate)}</p>
 
           {release.description && (
-            <p className="mt-8 max-w-xl text-lg text-paper-dim">{release.description}</p>
+            <p className="mt-8 max-w-xl text-lg text-sea-mist">{release.description}</p>
           )}
 
           <div className="mt-12">
-            <h2 className="font-mono-label mb-4 text-paper-dim">Tracklist</h2>
+            <h2 className="font-mono-label mb-4 text-sea-mist">Tracklist</h2>
             <Tracklist release={release} />
           </div>
 
           {release.credits && release.credits.length > 0 && (
             <div className="mt-12">
-              <h2 className="font-mono-label mb-4 text-paper-dim">Credits</h2>
-              <ul className="space-y-1 text-paper-dim">
+              <h2 className="font-mono-label mb-4 text-sea-mist">Credits</h2>
+              <ul className="space-y-1 text-sea-mist">
                 {release.credits.map((credit) => (
                   <li key={credit}>{credit}</li>
                 ))}
@@ -82,8 +82,8 @@ export default async function ReleasePage(props: PageProps<"/release/[slug]">) {
 
           {release.lyrics && (
             <div className="mt-12">
-              <h2 className="font-mono-label mb-4 text-paper-dim">Lyrics</h2>
-              <p className="max-w-xl whitespace-pre-line text-paper-dim">{release.lyrics}</p>
+              <h2 className="font-mono-label mb-4 text-sea-mist">Lyrics</h2>
+              <p className="max-w-xl whitespace-pre-line text-sea-mist">{release.lyrics}</p>
             </div>
           )}
         </div>

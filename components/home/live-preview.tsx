@@ -6,7 +6,7 @@ import type { LiveEvent } from "@/lib/types";
 
 export function LivePreview({ events }: { events: LiveEvent[] }) {
   return (
-    <section className="section-paper border-b border-line py-20 md:py-28">
+    <section className="section-paper border-b border-line-on-paper py-20 md:py-28">
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-6">
           <Reveal>
@@ -15,7 +15,7 @@ export function LivePreview({ events }: { events: LiveEvent[] }) {
               On stage
             </h2>
           </Reveal>
-          <Link href="/live" className="font-mono-label border-b border-current pb-0.5 hover:text-sea">
+          <Link href="/live" className="font-mono-label border-b border-current pb-0.5 hover:text-cobalt">
             All dates
           </Link>
         </div>
@@ -32,7 +32,7 @@ export function LivePreview({ events }: { events: LiveEvent[] }) {
           ) : (
             <ul className="hairline divide-y divide-line-on-paper border-t">
               {events.slice(0, 3).map((event, i) => (
-                <Reveal key={event._id} delay={i * 0.05}>
+                <Reveal key={event._id} delay={i * 0.06}>
                   <li className="flex flex-wrap items-baseline justify-between gap-2 py-5">
                     <span className="font-display text-2xl font-medium">{event.name}</span>
                     <span className="font-mono-label text-current/60">
