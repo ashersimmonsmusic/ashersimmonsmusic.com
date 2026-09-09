@@ -31,7 +31,7 @@ export const siteConfig = {
     birthCountry: "Bermuda",
     base: "Bristol, UK",
   },
-  contactEmail: "hello@ashersimmonsmusic.com",
+  contactEmail: "ashersimmonsmusic@gmail.com",
 } as const;
 
 export type SiteConfig = typeof siteConfig;

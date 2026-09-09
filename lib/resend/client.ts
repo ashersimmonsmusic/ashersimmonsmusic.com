@@ -14,4 +14,4 @@ export function getResendClient(): Resend {
 }
 
 export const EMAIL_FROM = process.env.RESEND_FROM_EMAIL ?? "Asher Simmons Music <hello@ashersimmonsmusic.com>";
-export const CONTACT_INBOX = process.env.CONTACT_INBOX_EMAIL ?? "hello@ashersimmonsmusic.com";
+export const CONTACT_INBOX = process.env.CONTACT_INBOX_EMAIL ?? "ashersimmonsmusic@gmail.com";
