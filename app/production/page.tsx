@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container, Eyebrow } from "@/components/ui/container";
 import { ServiceCard } from "@/components/production/service-card";
 import { ContactForm } from "@/components/forms/contact-form";
+import { UntitledTrackEmbed } from "@/components/music/untitled-track-embed";
 import { getServices } from "@/lib/sanity/queries";
 
 export const metadata: Metadata = {
@@ -30,6 +31,14 @@ export default async function ProductionPage() {
           {services.map((service, i) => (
             <ServiceCard key={service._id} service={service} index={i} />
           ))}
+        </div>
+
+        <div className="mt-20 max-w-xl">
+          <Eyebrow>Beats</Eyebrow>
+          <p className="mt-4 text-paper-dim">
+            Instrumentals available to license — stream below and get in touch.
+          </p>
+          <UntitledTrackEmbed embedId="0n69NhzChBk5" title="Beats" className="mt-6" />
         </div>
       </Container>
 
