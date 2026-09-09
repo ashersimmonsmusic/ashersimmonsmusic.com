@@ -2,19 +2,13 @@ import Link from "next/link";
 import { ArrowDownRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { PlayReleaseButton } from "@/components/music/play-button";
+import { RouteMotif } from "@/components/brand/route-motif";
 import type { Release } from "@/lib/types";
 
 export function Hero({ featuredRelease }: { featuredRelease: Release }) {
   return (
     <section className="relative overflow-hidden border-b border-line pt-14 pb-20 md:pt-24 md:pb-28">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(115deg, transparent, transparent 64px, rgba(242,236,221,0.03) 64px, rgba(242,236,221,0.03) 65px)",
-        }}
-      />
+      <RouteMotif className="pointer-events-none absolute top-4 right-0 h-[46vw] max-h-[28rem] w-[66vw] max-w-3xl text-sun/[0.16] md:-top-4" />
 
       <Container className="relative">
         <p className="font-mono-label text-sun">Dundas Town, Abaco → Bristol, UK</p>
