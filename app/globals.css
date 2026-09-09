@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Typography */
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-archivo);
+  --font-mono: var(--font-space-mono);
+
+  /* Core palette — editorial ink & paper with a single Caribbean accent */
+  --color-ink: #0b0b09;
+  --color-ink-raised: #151310;
+  --color-paper: #f2ecdd;
+  --color-paper-dim: #a89f8b;
+  --color-paper-muted: #6b6455;
+  --color-sun: #ff5a2b;
+  --color-sun-ink: #2a1105;
+  --color-sea: #12615a;
+  --color-line: #35322a;
+  --color-line-on-paper: #d8cfb8;
+
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  background: var(--color-ink);
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01" 1;
+}
+
+::selection {
+  background: var(--color-sun);
+  color: var(--color-sun-ink);
+}
+
+/* Visible focus states everywhere — never suppressed. */
+:focus-visible {
+  outline: 2px solid var(--color-sun);
+  outline-offset: 3px;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-label {
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Editorial "paper" sections invert the palette for magazine-style contrast. */
+.section-paper {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.hairline {
+  border-color: var(--color-line);
+}
+
+.section-paper .hairline {
+  border-color: var(--color-line-on-paper);
+}
+
+.text-balance-pretty {
+  text-wrap: pretty;
+}
