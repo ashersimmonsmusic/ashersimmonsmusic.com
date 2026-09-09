@@ -1,0 +1,14 @@
+# Explicit Nixpacks config for Railway. Ensures the pinned pnpm version
+# (see package.json "packageManager") is used via Corepack rather than
+# whatever pnpm Nixpacks would otherwise default to.
+[phases.setup]
+nixPkgs = ["nodejs_20"]
+
+[phases.install]
+cmds = ["corepack enable", "corepack prepare pnpm@10.33.0 --activate", "pnpm install --frozen-lockfile"]
+
+[phases.build]
+cmds = ["pnpm build"]
+
+[start]
+cmd = "pnpm start"

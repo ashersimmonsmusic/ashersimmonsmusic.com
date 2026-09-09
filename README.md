@@ -107,3 +107,26 @@ task per the brief: it's intentionally not built into this MVP.
 See `.env.example`. Nothing is required to run the site locally — Sanity,
 Supabase, Stripe and Resend calls all fail closed (fall back to placeholder
 data, or surface a friendly form error) when their keys are unset.
+
+## Deploying on Railway
+
+This is a single Next.js app — one Railway service handles both pages and
+server-side logic (API routes, Server Actions). There's no separate backend
+to stand up; Sanity, Supabase, Stripe and Resend are external hosted
+services you just point env vars at.
+
+1. On [railway.app](https://railway.app), **New Project → Deploy from GitHub
+   repo** and pick `ashersimmonsmusic/ashersimmonsmusic.com`.
+2. Railway auto-detects Node via Nixpacks. `railway.json` and
+   `nixpacks.toml` in this repo pin the build to `pnpm build` and the start
+   command to `pnpm start` (which binds to Railway's injected `$PORT`), and
+   `package.json`'s `engines.node` pins Node 20+.
+3. Under the service's **Variables** tab, add whichever keys from
+   `.env.example` you actually have — none are required for the site to
+   boot, but without them Sanity/Supabase/Stripe/Resend features fall back
+   to placeholders or a disabled state (see above).
+4. Deploy. Railway gives you a `*.up.railway.app` domain immediately; attach
+   `ashersimmonsmusic.com` under **Settings → Networking → Custom Domain**
+   once DNS (Cloudflare, per the brief) points a CNAME at it.
+
+Every push to the connected branch redeploys automatically.
