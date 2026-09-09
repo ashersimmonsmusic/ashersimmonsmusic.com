@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDownRight } from "lucide-react";
-import { PlayReleaseButton } from "@/components/music/play-button";
+import { ArrowDownRight, Play } from "lucide-react";
 import { heroLivePhoto } from "@/lib/data/live-photos";
 import type { Release } from "@/lib/types";
 
@@ -24,13 +23,15 @@ export function Hero({ featuredRelease }: { featuredRelease: Release }) {
             performing every record from the ground up.
           </p>
 
-          <div className="mt-10 flex items-center gap-4">
-            <PlayReleaseButton release={featuredRelease} size="lg" />
-            <div>
-              <p className="font-mono-label text-paper-dim">Now playing</p>
-              <p className="font-display text-lg">{featuredRelease.title}</p>
-            </div>
-          </div>
+          <Link href={`/release/${featuredRelease.slug}`} className="group mt-10 flex items-center gap-4">
+            <span className="flex size-16 items-center justify-center rounded-full bg-sun text-sun-ink transition-transform duration-200 ease-[var(--ease-editorial)] group-hover:scale-105">
+              <Play className="ml-1 size-6" fill="currentColor" />
+            </span>
+            <span>
+              <span className="font-mono-label block text-paper-dim">Listen now</span>
+              <span className="font-display block text-lg">{featuredRelease.title}</span>
+            </span>
+          </Link>
 
           <Link
             href="/about"
