@@ -41,6 +41,13 @@ export const release = defineType({
     defineField({ name: "lyrics", type: "text", rows: 10 }),
     defineField({ name: "featured", type: "boolean", initialValue: false }),
     defineField({
+      name: "untitledEmbedId",
+      title: "Untitled.stream embed ID",
+      type: "string",
+      description:
+        "The ID from this track's untitled.stream embed code, e.g. the XXXXXXXXXXXX in untitled.stream/embed/XXXXXXXXXXXX.",
+    }),
+    defineField({
       name: "links",
       title: "External Links",
       type: "object",

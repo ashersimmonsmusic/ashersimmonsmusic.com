@@ -18,6 +18,7 @@ export const releases: Release[] = [
     credits: [],
     featured: true,
     links: {},
+    untitledEmbedId: "DF0QiRWoLtEl",
   },
   {
     _id: "brighter-days",
@@ -31,6 +32,7 @@ export const releases: Release[] = [
     credits: [],
     featured: true,
     links: {},
+    untitledEmbedId: "VRcL5NIrPJMa",
   },
   {
     _id: "head-in-the-clouds",
@@ -103,6 +105,21 @@ export const releases: Release[] = [
     credits: [],
     featured: false,
     links: {},
+  },
+  {
+    _id: "thanks-and-praises",
+    slug: "thanks-and-praises",
+    // TODO: confirm releaseType (currently guessed as "single") and releaseDate.
+    title: "Thanks and Praises",
+    releaseType: "single",
+    releaseDate: undefined,
+    artwork: { url: "", alt: "Thanks and Praises artwork" },
+    description: "",
+    tracklist: [],
+    credits: [],
+    featured: false,
+    links: {},
+    untitledEmbedId: "XKGIa3c0saQ6",
   },
 ];
 

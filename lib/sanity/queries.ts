@@ -35,7 +35,7 @@ export async function getReleases(): Promise<Release[]> {
   if (!isSanityConfigured || !sanityClient) return localReleases;
   const query = `*[_type == "release"] | order(releaseDate desc){
     _id, "slug": slug.current, title, releaseType, releaseDate, artwork,
-    description, tracklist, credits, lyrics, featured, links
+    description, tracklist, credits, lyrics, featured, links, untitledEmbedId
   }`;
   const docs = await sanityClient.fetch(query);
   return docs.map((doc: Record<string, unknown>) => ({
@@ -50,7 +50,7 @@ export async function getReleaseBySlug(slug: string): Promise<Release | undefine
   }
   const query = `*[_type == "release" && slug.current == $slug][0]{
     _id, "slug": slug.current, title, releaseType, releaseDate, artwork,
-    description, tracklist, credits, lyrics, featured, links
+    description, tracklist, credits, lyrics, featured, links, untitledEmbedId
   }`;
   const doc = await sanityClient.fetch(query, { slug });
   if (!doc) return undefined;

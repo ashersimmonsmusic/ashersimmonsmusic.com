@@ -5,6 +5,7 @@ import { ReleaseArtwork } from "@/components/releases/artwork";
 import { PlayReleaseButton } from "@/components/music/play-button";
 import { Tracklist } from "@/components/releases/tracklist";
 import { ExternalLinks } from "@/components/releases/external-links";
+import { UntitledTrackEmbed } from "@/components/music/untitled-track-embed";
 import { formatDate } from "@/lib/utils";
 import { getReleaseBySlug, getReleases } from "@/lib/sanity/queries";
 
@@ -47,10 +48,23 @@ export default async function ReleasePage(props: PageProps<"/release/[slug]">) {
             priority
             sizes="(min-width: 1024px) 420px, 100vw"
           />
-          <div className="mt-6 flex items-center gap-5">
-            <PlayReleaseButton release={release} size="lg" />
-            <ExternalLinks links={release.links} />
-          </div>
+          {release.untitledEmbedId ? (
+            <UntitledTrackEmbed
+              embedId={release.untitledEmbedId}
+              title={release.title}
+              className="mt-6"
+            />
+          ) : (
+            <div className="mt-6 flex items-center gap-5">
+              <PlayReleaseButton release={release} size="lg" />
+              <ExternalLinks links={release.links} />
+            </div>
+          )}
+          {release.untitledEmbedId && (
+            <div className="mt-5">
+              <ExternalLinks links={release.links} />
+            </div>
+          )}
         </div>
 
         <div>

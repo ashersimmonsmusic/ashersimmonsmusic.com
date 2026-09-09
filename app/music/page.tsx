@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container, Eyebrow } from "@/components/ui/container";
-import { UntitledStreamEmbed } from "@/components/music/untitled-stream-embed";
+import { UntitledTrackEmbed } from "@/components/music/untitled-track-embed";
+import { formatDate } from "@/lib/utils";
+import { getReleases } from "@/lib/sanity/queries";
 
 export const metadata: Metadata = {
   title: "Music",
@@ -9,7 +12,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/music" },
 };
 
-export default function MusicPage() {
+export default async function MusicPage() {
+  const releases = await getReleases();
+
   return (
     <Container className="py-16 md:py-24">
       <Eyebrow>Discography</Eyebrow>
@@ -21,7 +26,28 @@ export default function MusicPage() {
         produced, engineered and written by Asher. Streaming live below.
       </p>
 
-      <UntitledStreamEmbed className="mt-16" />
+      <ul className="hairline mt-16 divide-y divide-line border-t">
+        {releases.map((release) => (
+          <li key={release._id} className="py-10">
+            <Link href={`/release/${release.slug}`} className="group inline-block">
+              <h2 className="font-display text-3xl font-medium tracking-tight group-hover:text-sun md:text-4xl">
+                {release.title}
+              </h2>
+            </Link>
+            <p className="font-mono-label mt-1 text-paper-dim">
+              {release.releaseType} · {formatDate(release.releaseDate)}
+            </p>
+
+            <div className="mt-6 max-w-xl">
+              {release.untitledEmbedId ? (
+                <UntitledTrackEmbed embedId={release.untitledEmbedId} title={release.title} />
+              ) : (
+                <p className="font-mono-label text-paper-dim">Coming to Untitled soon</p>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
     </Container>
   );
 }

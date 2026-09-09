@@ -51,6 +51,9 @@ export type Release = {
   lyrics?: string;
   featured?: boolean;
   links: ExternalLinks;
+  /** Untitled.stream per-track embed ID (from an embed like
+   *  untitled.stream/embed/{id}) — undefined until Asher supplies one. */
+  untitledEmbedId?: string;
 };
 
 export type EventStatus = "confirmed" | "postponed" | "cancelled" | "sold-out";
