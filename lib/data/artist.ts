@@ -14,7 +14,10 @@ That range has carried him onto some of the UK's biggest festival stages, includ
 Spiritual and personal themes surface in specific songs where they belong to the story being told, but they describe individual pieces of work, not a fixed identity — Asher's focus stays on the craft: the writing, the production, the engineering, and the live show.`,
   birthplace: "Dundas Town, Abaco, Bahamas",
   base: "Bristol, UK",
-  portrait: { url: "", alt: "Portrait of Asher Simmons" },
+  portrait: {
+    url: "/images/press/asher-simmons-live-arch-window.jpg",
+    alt: "Asher Simmons smiling on stage in front of an arched window",
+  },
   achievements: [
     {
       _id: "glastonbury",

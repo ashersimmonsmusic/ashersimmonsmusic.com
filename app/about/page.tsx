@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Container, Eyebrow } from "@/components/ui/container";
-import { ReleaseArtwork } from "@/components/releases/artwork";
+import { Portrait } from "@/components/about/portrait";
 import { PersonJsonLd } from "@/components/seo/json-ld";
 import { getArtistProfile } from "@/lib/sanity/queries";
 
@@ -27,7 +27,7 @@ export default async function AboutPage() {
             <span className="italic">to Bristol.</span>
           </h1>
           <div className="mt-10">
-            <ReleaseArtwork title={artist.name} url={artist.portrait?.url} alt={artist.portrait?.alt ?? artist.name} />
+            <Portrait url={artist.portrait?.url} alt={artist.portrait?.alt ?? artist.name} />
           </div>
           <dl className="font-mono-label mt-8 space-y-4 text-paper-dim">
             <div className="flex justify-between border-t border-line pt-3">

@@ -3,6 +3,7 @@ import { mainNav } from "@/lib/nav";
 import { socialLinks } from "@/lib/data/social";
 import { siteConfig } from "@/lib/site-config";
 import { NewsletterForm } from "@/components/forms/newsletter-form";
+import { RouteMotif } from "@/components/brand/route-motif";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -55,7 +56,10 @@ export function SiteFooter() {
           <p>
             © {year} {siteConfig.name}. All rights reserved.
           </p>
-          <p>{siteConfig.origin.birthplace} → {siteConfig.origin.base}</p>
+          <p className="flex items-center gap-2">
+            <RouteMotif className="h-3 w-8 text-sun/70" />
+            {siteConfig.origin.birthplace} → {siteConfig.origin.base}
+          </p>
         </div>
       </div>
     </footer>
