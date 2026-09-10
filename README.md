@@ -84,11 +84,10 @@ with `server-only`).
 
 ## Commerce
 
-`lib/commerce/` defines `Product` independently of Stripe — the `/store`
-page and any future cart/checkout UI work against that type. `lib/stripe/`
-is a thin, server-only Stripe client with nothing else wired up yet
-(no Checkout Session, no webhook route). Wiring commerce up is a Phase 2
-task per the brief: it's intentionally not built into this MVP.
+Not built yet. The `/store` page, `lib/commerce/` product model, and any
+cart/checkout UI were removed until there's a real plan for them — `lib/stripe/`
+remains as a thin, server-only Stripe client with nothing else wired up
+(no Checkout Session, no webhook route, no product data).
 
 ## Testing
 

@@ -2,10 +2,8 @@ import "server-only";
 import Stripe from "stripe";
 
 /**
- * Server-only Stripe client. No checkout flow is wired up yet (see
- * lib/commerce for the provider-independent product model) — this exists so
- * Checkout Sessions, webhooks and Prices can be added later without
- * restructuring the store UI.
+ * Server-only Stripe client. No checkout flow or store UI is wired up yet —
+ * this exists so Checkout Sessions, webhooks and Prices can be added later.
  */
 let stripe: Stripe | null = null;
 
