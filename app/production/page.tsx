@@ -29,16 +29,17 @@ export default async function ProductionPage() {
 
         <div className="mt-16">
           {services.map((service, i) => (
-            <ServiceCard key={service._id} service={service} index={i} />
+            <ServiceCard key={service._id} service={service} index={i}>
+              {service.category === "beatmaking" && (
+                <div className="mt-6 max-w-xl">
+                  <p className="font-mono-label text-current/40">
+                    Instrumentals available to license — stream below and get in touch.
+                  </p>
+                  <UntitledTrackEmbed embedId="0n69NhzChBk5" title="Beats" className="mt-4" />
+                </div>
+              )}
+            </ServiceCard>
           ))}
-        </div>
-
-        <div className="mt-20 max-w-xl">
-          <Eyebrow>Beats</Eyebrow>
-          <p className="mt-4 text-paper-dim">
-            Instrumentals available to license — stream below and get in touch.
-          </p>
-          <UntitledTrackEmbed embedId="0n69NhzChBk5" title="Beats" className="mt-6" />
         </div>
       </Container>
 
