@@ -19,7 +19,7 @@ export const releases: Release[] = [
     description: "",
     tracklist: [],
     credits: [],
-    featured: true,
+    featured: false,
     links: {},
     untitledEmbedId: "DF0QiRWoLtEl",
   },
