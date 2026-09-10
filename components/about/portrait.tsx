@@ -16,11 +16,7 @@ export function Portrait({
         className={cn("relative aspect-[4/5] bg-ink-raised", className)}
         role="img"
         aria-label={alt}
-      >
-        <span className="font-mono-label absolute bottom-3 left-3 text-[9px] text-paper/40">
-          Portrait TBA
-        </span>
-      </div>
+      />
     );
   }
 

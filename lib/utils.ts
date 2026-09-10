@@ -19,6 +19,13 @@ export function formatDate(dateString: string | null | undefined): string {
   });
 }
 
+/** "Single · 14 March 2024", or just "Single" when the date isn't known yet. */
+export function releaseMeta(release: { releaseType: string; releaseDate?: string }): string {
+  return release.releaseDate
+    ? `${release.releaseType} · ${formatDate(release.releaseDate)}`
+    : release.releaseType;
+}
+
 export function formatTime(seconds: number): string {
   if (!Number.isFinite(seconds) || seconds < 0) return "0:00";
   const mins = Math.floor(seconds / 60);

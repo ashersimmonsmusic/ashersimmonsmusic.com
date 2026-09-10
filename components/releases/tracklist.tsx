@@ -8,10 +8,6 @@ import type { Release } from "@/lib/types";
 export function Tracklist({ release }: { release: Release }) {
   const { state, currentTrack, playQueue, togglePlay } = usePlayer();
 
-  if (release.tracklist.length === 0) {
-    return <p className="text-paper-dim">Tracklist to be announced.</p>;
-  }
-
   return (
     <ol className="hairline divide-y divide-line border-t">
       {release.tracklist

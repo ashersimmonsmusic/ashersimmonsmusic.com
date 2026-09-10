@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ReleaseArtwork } from "@/components/releases/artwork";
-import { formatDate } from "@/lib/utils";
+import { releaseMeta } from "@/lib/utils";
 import type { Release } from "@/lib/types";
 
 export function ReleaseCard({ release }: { release: Release }) {
@@ -11,9 +11,7 @@ export function ReleaseCard({ release }: { release: Release }) {
       </Link>
       <Link href={`/release/${release.slug}`} className="mt-4 block">
         <h3 className="font-display text-xl font-medium group-hover:text-sun">{release.title}</h3>
-        <p className="font-mono-label mt-1 text-paper-dim">
-          {release.releaseType} · {formatDate(release.releaseDate)}
-        </p>
+        <p className="font-mono-label mt-1 text-paper-dim">{releaseMeta(release)}</p>
       </Link>
     </article>
   );

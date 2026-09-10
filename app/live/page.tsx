@@ -93,9 +93,6 @@ export default async function LivePage() {
               <YouTubePlaylistEmbed playlistId={livePlaylist.id} title={livePlaylist.title} />
             )}
             <VideoGrid videos={videos} />
-            {!livePlaylist && videos.length === 0 && (
-              <p className="max-w-xl text-paper-dim">Performance videos coming soon.</p>
-            )}
           </div>
         </div>
 

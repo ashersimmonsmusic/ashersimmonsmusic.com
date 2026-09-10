@@ -14,11 +14,7 @@ export function ExternalLinks({ links }: { links: ExternalLinksType }) {
     (key) => links[key],
   );
 
-  if (entries.length === 0) {
-    return (
-      <p className="font-mono-label text-paper-dim">Streaming links coming soon</p>
-    );
-  }
+  if (entries.length === 0) return null;
 
   return (
     <ul className="flex flex-wrap gap-3">

@@ -78,16 +78,20 @@ export default async function ReleasePage(props: PageProps<"/release/[slug]">) {
           <h1 className="font-display mt-4 text-5xl leading-[0.95] font-medium tracking-tight md:text-7xl">
             {release.title}
           </h1>
-          <p className="font-mono-label mt-4 text-paper-dim">{formatDate(release.releaseDate)}</p>
+          {release.releaseDate && (
+            <p className="font-mono-label mt-4 text-paper-dim">{formatDate(release.releaseDate)}</p>
+          )}
 
           {release.description && (
             <p className="mt-8 max-w-xl text-lg text-paper-dim">{release.description}</p>
           )}
 
-          <div className="mt-12">
-            <h2 className="font-mono-label mb-4 text-paper-dim">Tracklist</h2>
-            <Tracklist release={release} />
-          </div>
+          {release.tracklist.length > 0 && (
+            <div className="mt-12">
+              <h2 className="font-mono-label mb-4 text-paper-dim">Tracklist</h2>
+              <Tracklist release={release} />
+            </div>
+          )}
 
           {release.credits && release.credits.length > 0 && (
             <div className="mt-12">

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container, Eyebrow } from "@/components/ui/container";
 import { UntitledTrackEmbed } from "@/components/music/untitled-track-embed";
-import { formatDate } from "@/lib/utils";
+import { releaseMeta } from "@/lib/utils";
 import { getReleases } from "@/lib/sanity/queries";
 
 export const metadata: Metadata = {
@@ -34,17 +34,13 @@ export default async function MusicPage() {
                 {release.title}
               </h2>
             </Link>
-            <p className="font-mono-label mt-1 text-paper-dim">
-              {release.releaseType} · {formatDate(release.releaseDate)}
-            </p>
+            <p className="font-mono-label mt-1 text-paper-dim">{releaseMeta(release)}</p>
 
-            <div className="mt-6 max-w-xl">
-              {release.untitledEmbedId ? (
+            {release.untitledEmbedId && (
+              <div className="mt-6 max-w-xl">
                 <UntitledTrackEmbed embedId={release.untitledEmbedId} title={release.title} />
-              ) : (
-                <p className="font-mono-label text-paper-dim">Coming to Untitled soon</p>
-              )}
-            </div>
+              </div>
+            )}
           </li>
         ))}
       </ul>

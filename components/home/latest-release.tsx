@@ -4,7 +4,7 @@ import { ReleaseArtwork } from "@/components/releases/artwork";
 import { PlayReleaseButton } from "@/components/music/play-button";
 import { UntitledTrackEmbed } from "@/components/music/untitled-track-embed";
 import { Reveal } from "@/components/motion/reveal";
-import { formatDate } from "@/lib/utils";
+import { releaseMeta } from "@/lib/utils";
 import type { Release } from "@/lib/types";
 
 export function LatestRelease({ release }: { release: Release }) {
@@ -40,9 +40,7 @@ export function LatestRelease({ release }: { release: Release }) {
           </Reveal>
 
           <Reveal delay={0.1} className="order-1 lg:order-2">
-            <p className="font-mono-label text-paper-dim">
-              {release.releaseType} · {formatDate(release.releaseDate)}
-            </p>
+            <p className="font-mono-label text-paper-dim">{releaseMeta(release)}</p>
             <h2 className="font-display mt-4 text-5xl leading-[0.95] font-medium tracking-tight md:text-6xl">
               {release.title}
             </h2>

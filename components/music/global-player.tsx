@@ -94,9 +94,6 @@ export function GlobalPlayer() {
               {hasAudio ? formatTime(state.duration) : "—:—"}
             </span>
           </div>
-          {!hasAudio && (
-            <p className="font-mono-label text-[9px] text-paper-dim md:hidden">Preview coming soon</p>
-          )}
         </div>
 
         <div className="hidden shrink-0 items-center gap-2 lg:flex">

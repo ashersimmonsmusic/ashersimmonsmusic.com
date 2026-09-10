@@ -66,9 +66,6 @@ export function ReleaseArtwork({
       <span className="font-display relative text-[18vw] leading-none font-black text-paper/15 select-none lg:text-[4.5vw]">
         {initials(title)}
       </span>
-      <span className="font-mono-label absolute bottom-3 left-3 text-[9px] text-paper/40">
-        Artwork TBA
-      </span>
     </div>
   );
 }
