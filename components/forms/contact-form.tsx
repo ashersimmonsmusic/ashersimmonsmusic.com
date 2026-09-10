@@ -87,7 +87,7 @@ export function ContactForm({ defaultSubject }: { defaultSubject?: ContactFormVa
       </Button>
 
       <div role="status" aria-live="polite" className="min-h-[1.25rem] text-sm">
-        {status === "success" && <p className="text-sun">Message sent — thank you. Asher&apos;s team will be in touch.</p>}
+        {status === "success" && <p className="text-sun">Message sent, thank you. Asher&apos;s team will be in touch.</p>}
         {status === "error" && <p className="text-sun">{serverMessage}</p>}
       </div>
     </form>

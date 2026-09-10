@@ -14,7 +14,7 @@ export const releases: Release[] = [
     releaseDate: undefined,
     artwork: {
       url: "/images/releases/open-letters-to-god.jpg",
-      alt: "Open Letters to God cover art — graffiti-style lettering with a pigeon illustration against a cloudy sky",
+      alt: "Open Letters to God cover art, graffiti-style lettering with a pigeon illustration against a cloudy sky",
     },
     description: "",
     tracklist: [],
@@ -31,7 +31,7 @@ export const releases: Release[] = [
     releaseDate: undefined,
     artwork: {
       url: "/images/releases/brighter-days.jpg",
-      alt: "Brighter Days cover art — hand-lettered title over a sky and island coastline",
+      alt: "Brighter Days cover art, hand-lettered title over a sky and island coastline",
     },
     description: "",
     tracklist: [],
@@ -48,7 +48,7 @@ export const releases: Release[] = [
     releaseDate: "2025",
     artwork: {
       url: "/images/releases/thanks-and-praises.jpg",
-      alt: "Thanks and Praises cover art — a painting of a tree with its roots exposed in cross-section beneath the soil, set against a bright cloudy sky",
+      alt: "Thanks and Praises cover art, a painting of a tree with its roots exposed in cross-section beneath the soil, set against a bright cloudy sky",
     },
     description: "",
     tracklist: [],

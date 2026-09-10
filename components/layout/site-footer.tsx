@@ -15,7 +15,7 @@ export function SiteFooter() {
           <div>
             <p className="font-mono-label text-sun">Stay in the loop</p>
             <h2 className="font-display mt-3 max-w-md text-3xl leading-tight font-medium text-balance-pretty">
-              New music, shows and studio updates — straight to your inbox.
+              New music, shows and studio updates, straight to your inbox.
             </h2>
             <NewsletterForm className="mt-6 max-w-md" />
           </div>

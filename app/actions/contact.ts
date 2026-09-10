@@ -41,7 +41,7 @@ export async function submitContactForm(
   } catch {
     return {
       status: "error",
-      message: "Couldn't send your message right now — please try again shortly.",
+      message: "Couldn't send your message right now. Please try again shortly.",
     };
   }
 }

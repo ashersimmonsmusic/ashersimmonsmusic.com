@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Store",
-  description: "Official Asher Simmons merch — shop the store on Printify.",
+  description: "Official Asher Simmons merch. Shop the store on Printify.",
   alternates: { canonical: "/store" },
 };
 
@@ -18,7 +18,7 @@ export default function StorePage() {
       </h1>
       <p className="mt-6 max-w-xl text-paper-dim">
         Official Asher Simmons merchandise, printed to order and shipped
-        direct. The full store lives on Printify — head over to browse and
+        direct. The full store lives on Printify. Head over to browse and
         check out.
       </p>
 

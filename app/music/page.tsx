@@ -8,7 +8,7 @@ import { getReleases } from "@/lib/sanity/queries";
 export const metadata: Metadata = {
   title: "Music",
   description:
-    "Listen to releases from Asher Simmons — Caribbean rapper and producer moving between Hip-Hop and Afrobeat.",
+    "Listen to releases from Asher Simmons, Caribbean rapper and producer moving between Hip-Hop and Afrobeat.",
   alternates: { canonical: "/music" },
 };
 
@@ -22,7 +22,7 @@ export default async function MusicPage() {
         Music
       </h1>
       <p className="mt-6 max-w-xl text-paper-dim">
-        Every release, from loosies to full projects — Hip-Hop and Afrobeat,
+        Every release, from loosies to full projects: Hip-Hop and Afrobeat,
         produced, engineered and written by Asher. Streaming live below.
       </p>
 

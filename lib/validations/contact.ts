@@ -6,7 +6,7 @@ export const contactFormSchema = z.object({
   subject: z.enum(["production", "booking", "general"], {
     error: "Please select what this is about.",
   }),
-  message: z.string().trim().min(10, "Tell us a little more — at least 10 characters."),
+  message: z.string().trim().min(10, "Tell us a little more (at least 10 characters)."),
   // Honeypot field — real users never fill this in.
   company: z.string().max(0).optional().or(z.literal("")),
 });

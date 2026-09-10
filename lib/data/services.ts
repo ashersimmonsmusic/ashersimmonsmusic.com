@@ -7,7 +7,7 @@ export const services: Service[] = [
     title: "Production",
     summary: "Full track production across Hip-Hop, Afrobeat and beyond.",
     description:
-      "From a single loop to a finished arrangement, Asher builds records from the ground up — structuring drums, chords, melody and space around the song rather than a template.",
+      "From a single loop to a finished arrangement, Asher builds records from the ground up: structuring drums, chords, melody and space around the song rather than a template.",
   },
   {
     _id: "beatmaking",
@@ -31,7 +31,7 @@ export const services: Service[] = [
     title: "Creative Direction",
     summary: "Guidance on sound, sequencing and artistic identity.",
     description:
-      "Support shaping a project's overall direction — sequencing a body of work, developing a sonic identity, and making sure a release says what it means to say.",
+      "Support shaping a project's overall direction: sequencing a body of work, developing a sonic identity, and making sure a release says what it means to say.",
   },
 ];
 

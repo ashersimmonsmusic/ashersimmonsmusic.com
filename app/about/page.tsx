@@ -7,7 +7,7 @@ import { getArtistProfile } from "@/lib/sanity/queries";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Asher Simmons — Caribbean rapper, producer and sound engineer, raised in Dundas Town, Abaco, Bahamas, now based in Bristol, UK.",
+    "Asher Simmons, Caribbean rapper, producer and sound engineer, raised in Dundas Town, Abaco, Bahamas, now based in Bristol, UK.",
   alternates: { canonical: "/about" },
 };
 

@@ -20,7 +20,7 @@ export function ProductionCta() {
               />
             </h2>
             <p className="mt-6 max-w-xl text-paper-dim">
-              Asher works behind the board as much as in front of the mic —
+              Asher works behind the board as much as in front of the mic:
               available for production, beatmaking, mixing and creative
               direction.
             </p>

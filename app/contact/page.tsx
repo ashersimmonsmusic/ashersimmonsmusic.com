@@ -19,7 +19,7 @@ export default function ContactPage() {
             Get in touch
           </h1>
           <p className="mt-6 max-w-sm text-paper-dim">
-            Bookings, production enquiries, press or just to say hello — the
+            Bookings, production enquiries, press or just to say hello. The
             form reaches Asher&apos;s team directly.
           </p>
 

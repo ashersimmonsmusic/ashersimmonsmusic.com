@@ -26,7 +26,7 @@ export function LivePreview({ events }: { events: LiveEvent[] }) {
               <p className="max-w-md text-current/70">
                 No shows currently on the books. Asher has performed at
                 Glastonbury, Love Saves The Day, Boomtown, Forwards Festival
-                and Bristol Beacon — check back soon for what&apos;s next.
+                and Bristol Beacon. Check back soon for what&apos;s next.
               </p>
             </Reveal>
           ) : (

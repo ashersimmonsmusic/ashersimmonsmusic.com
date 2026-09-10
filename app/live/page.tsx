@@ -54,7 +54,7 @@ export default async function LivePage() {
             <p className="text-lg text-paper-dim">
               No shows are currently on the books. Asher has performed at
               Glastonbury, Love Saves The Day, Boomtown, Forwards Festival and
-              Bristol Beacon — new dates will be announced here first.
+              Bristol Beacon. New dates will be announced here first.
             </p>
           </div>
         ) : (
@@ -99,7 +99,7 @@ export default async function LivePage() {
         <div className="mt-20">
           <Eyebrow>Selected Moments</Eyebrow>
           <p className="mt-4 max-w-xl text-paper-dim">
-            On stage — Next Level, Bristol, and beyond.
+            On stage: Next Level, Bristol, and beyond.
           </p>
           <div className="mt-8">
             <PhotoGallery photos={liveGalleryPhotos} />

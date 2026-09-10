@@ -45,7 +45,7 @@ export function Tracklist({ release }: { release: Release }) {
                 )}
               </span>
               <span className="font-mono-label text-current/50">
-                {track.duration ?? "—:—"}
+                {track.duration ?? "--:--"}
               </span>
             </li>
           );

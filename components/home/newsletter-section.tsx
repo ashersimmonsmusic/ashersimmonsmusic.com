@@ -12,7 +12,7 @@ export function NewsletterSection() {
             Don&apos;t miss a drop.
           </h2>
           <p className="mt-4 text-paper-dim">
-            New releases, studio sessions and show announcements — no spam, unsubscribe anytime.
+            New releases, studio sessions and show announcements (no spam, unsubscribe anytime).
           </p>
           <NewsletterForm className="mx-auto mt-8 max-w-md text-left" />
         </Reveal>

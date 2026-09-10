@@ -22,7 +22,7 @@ export async function generateMetadata(props: PageProps<"/release/[slug]">): Pro
   return {
     title: release.title,
     description:
-      release.description || `${release.title} — ${release.releaseType} by Asher Simmons.`,
+      release.description || `${release.title}, ${release.releaseType} by Asher Simmons.`,
     alternates: { canonical: `/release/${release.slug}` },
     openGraph: {
       title: release.title,

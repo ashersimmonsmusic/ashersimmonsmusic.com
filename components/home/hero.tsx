@@ -19,7 +19,7 @@ export function Hero({ featuredRelease }: { featuredRelease: Release }) {
 
           <p className="mt-8 max-w-md text-lg text-paper-dim md:text-xl">
             Caribbean rapper, producer &amp; sound engineer. Hip-Hop and Afrobeat,
-            built without a genre ceiling — writing, producing, engineering and
+            built without a genre ceiling: writing, producing, engineering and
             performing every record from the ground up.
           </p>
 

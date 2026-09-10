@@ -8,7 +8,7 @@ import { getServices } from "@/lib/sanity/queries";
 export const metadata: Metadata = {
   title: "Production",
   description:
-    "Production, beatmaking, sound engineering and creative direction from Asher Simmons — Caribbean producer and sound engineer based in Bristol.",
+    "Production, beatmaking, sound engineering and creative direction from Asher Simmons, Caribbean producer and sound engineer based in Bristol.",
   alternates: { canonical: "/production" },
 };
 
@@ -23,7 +23,7 @@ export default async function ProductionPage() {
           Production &amp; Engineering
         </h1>
         <p className="mt-6 max-w-xl text-paper-dim">
-          Asher builds records from the ground up — production, beatmaking,
+          Asher builds records from the ground up: production, beatmaking,
           sound engineering and creative direction, all under one roof.
         </p>
 
@@ -33,7 +33,7 @@ export default async function ProductionPage() {
               {service.category === "beatmaking" && (
                 <div className="mt-6 max-w-xl">
                   <p className="font-mono-label text-current/40">
-                    Instrumentals available to license — stream below and get in touch.
+                    Instrumentals available to license. Stream below and get in touch.
                   </p>
                   <UntitledTrackEmbed embedId="0n69NhzChBk5" title="Beats" className="mt-4" />
                 </div>
@@ -50,7 +50,7 @@ export default async function ProductionPage() {
             Start an enquiry
           </h2>
           <p className="mt-4 text-current/70">
-            Tell us about your project — production, mixing, a beat license
+            Tell us about your project: production, mixing, a beat license
             or something else entirely.
           </p>
           <div className="mt-10">

@@ -91,7 +91,7 @@ export function GlobalPlayer() {
               className="player-range h-1 flex-1 accent-sun disabled:opacity-30"
             />
             <span className="font-mono-label w-9 text-[10px] text-paper-dim">
-              {hasAudio ? formatTime(state.duration) : "—:—"}
+              {hasAudio ? formatTime(state.duration) : "--:--"}
             </span>
           </div>
         </div>

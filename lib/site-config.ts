@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Asher Simmons",
-  title: "Asher Simmons — Caribbean Rapper, Producer & Sound Engineer",
+  title: "Asher Simmons | Caribbean Rapper, Producer & Sound Engineer",
   description:
     "Asher Simmons is a Caribbean rapper, producer, sound engineer, songwriter and beatmaker from Dundas Town, Abaco, Bahamas, now based in Bristol, UK. Hip-Hop and Afrobeat, genre-fluid production.",
   url: "https://ashersimmonsmusic.com",
