@@ -84,10 +84,12 @@ with `server-only`).
 
 ## Commerce
 
-Not built yet. The `/store` page, `lib/commerce/` product model, and any
-cart/checkout UI were removed until there's a real plan for them — `lib/stripe/`
-remains as a thin, server-only Stripe client with nothing else wired up
-(no Checkout Session, no webhook route, no product data).
+Merch is sold on Printify (`siteConfig.printifyStoreUrl`), not on this site.
+`/store` is a simple link-out page in the site's own design pointing to the
+Printify storefront — there's no cart/checkout, product catalog, or Printify
+API integration here. `lib/stripe/` remains a thin, server-only Stripe client
+with nothing else wired up (no Checkout Session, no webhook route, no product
+data) in case a native storefront is built later.
 
 ## Testing
 

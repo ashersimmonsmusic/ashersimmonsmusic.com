@@ -24,6 +24,7 @@ export const siteConfig = {
     youtube: "https://youtube.com/ashersimmonsmusic",
     tiktok: "https://www.tiktok.com/@ashersimmons",
   },
+  printifyStoreUrl: "https://ashersimmonsmusic.printify.me/",
   origin: {
     // Where Asher is from / grew up — the "roots" side of the Bahamas → Bristol
     // story. His literal birthplace is Bermuda; see birthCountry below.
