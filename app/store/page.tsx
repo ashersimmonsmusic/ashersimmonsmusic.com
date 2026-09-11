@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 import { Container, Eyebrow } from "@/components/ui/container";
+import { PrintifyPreview } from "@/components/store/printify-preview";
 import { siteConfig } from "@/lib/site-config";
+import { getPrintifyProducts } from "@/lib/printify/client";
 
 export const metadata: Metadata = {
   title: "Store",
@@ -9,7 +11,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/store" },
 };
 
-export default function StorePage() {
+export default async function StorePage() {
+  const products = await getPrintifyProducts();
+
   return (
     <Container className="py-16 md:py-24">
       <Eyebrow>Store</Eyebrow>
@@ -31,6 +35,8 @@ export default function StorePage() {
         Shop the Store
         <ArrowUpRight className="size-4" aria-hidden />
       </a>
+
+      <PrintifyPreview products={products} />
     </Container>
   );
 }

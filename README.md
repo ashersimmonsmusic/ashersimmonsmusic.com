@@ -85,11 +85,14 @@ with `server-only`).
 ## Commerce
 
 Merch is sold on Printify (`siteConfig.printifyStoreUrl`), not on this site.
-`/store` is a simple link-out page in the site's own design pointing to the
-Printify storefront — there's no cart/checkout, product catalog, or Printify
-API integration here. `lib/stripe/` remains a thin, server-only Stripe client
-with nothing else wired up (no Checkout Session, no webhook route, no product
-data) in case a native storefront is built later.
+`/store` is a link-out page in the site's own design pointing to the Printify
+storefront, no cart or checkout lives here. `lib/printify/client.ts` optionally
+pulls a handful of visible products from the Printify API (image, title,
+price) to preview on the page; it needs `PRINTIFY_API_TOKEN` and
+`PRINTIFY_SHOP_ID` (see `.env.example`) and otherwise the preview widget just
+doesn't render, leaving the link-out button. `lib/stripe/` remains a thin,
+server-only Stripe client with nothing else wired up (no Checkout Session, no
+webhook route, no product data) in case a native storefront is built later.
 
 ## Testing
 
