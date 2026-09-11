@@ -100,6 +100,40 @@ export type Article = {
   url?: string;
 };
 
+/** A span inside a Portable Text block. */
+export type PortableTextSpan = {
+  _type: "span";
+  _key?: string;
+  text: string;
+  marks?: string[];
+};
+
+/** A mark definition a span's `marks` can reference by key — links, currently. */
+export type PortableTextMarkDef = {
+  _key: string;
+  _type: string;
+  href?: string;
+};
+
+export type PortableTextBlock = {
+  _type: "block";
+  _key?: string;
+  style?: string;
+  children: PortableTextSpan[];
+  markDefs?: PortableTextMarkDef[];
+};
+
+/** A news post Asher writes, as opposed to an Article written about him. */
+export type Post = {
+  _id: string;
+  slug: string;
+  title: string;
+  publishedAt: string;
+  excerpt?: string;
+  coverImage?: SanityImage;
+  body: PortableTextBlock[];
+};
+
 export type PressMention = {
   _id: string;
   outlet: string;

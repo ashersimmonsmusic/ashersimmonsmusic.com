@@ -1,9 +1,9 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site-config";
-import { getReleases } from "@/lib/sanity/queries";
+import { getPosts, getReleases } from "@/lib/sanity/queries";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const releases = await getReleases();
+  const [releases, posts] = await Promise.all([getReleases(), getPosts()]);
 
   const staticRoutes: MetadataRoute.Sitemap = [
     "",
@@ -11,6 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/production",
     "/about",
     "/live",
+    "/news",
     "/store",
     "/contact",
   ].map((path) => ({
@@ -27,5 +28,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...releaseRoutes];
+  const postRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${siteConfig.url}/news/${post.slug}`,
+    lastModified: new Date(post.publishedAt),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...releaseRoutes, ...postRoutes];
 }

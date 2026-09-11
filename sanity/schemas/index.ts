@@ -7,6 +7,7 @@ import { article } from "./article";
 import { pressMention } from "./pressMention";
 import { socialLink } from "./socialLink";
 import { liveVideo } from "./liveVideo";
+import { post } from "./post";
 
 export const schemaTypes = [
   artist,
@@ -18,4 +19,5 @@ export const schemaTypes = [
   pressMention,
   socialLink,
   liveVideo,
+  post,
 ];

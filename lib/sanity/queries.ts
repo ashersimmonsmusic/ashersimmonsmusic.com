@@ -4,6 +4,7 @@ import type {
   Article,
   LiveEvent,
   LiveVideo,
+  Post,
   PressMention,
   Release,
   Service,
@@ -14,6 +15,7 @@ import { artistProfile as localArtistProfile } from "@/lib/data/artist";
 import { events as localEvents } from "@/lib/data/events";
 import { services as localServices } from "@/lib/data/services";
 import { pressMentions as localPressMentions } from "@/lib/data/press";
+import { posts as localPosts } from "@/lib/data/posts";
 import { socialLinks as localSocialLinks } from "@/lib/data/social";
 import { liveVideos as localLiveVideos } from "@/lib/data/live-videos";
 
@@ -93,6 +95,35 @@ export async function getArticles(): Promise<Article[]> {
     _id, "slug": slug.current, title, publication, date, excerpt, url
   }`;
   return sanityClient.fetch(query);
+}
+
+const POST_FIELDS = `_id, "slug": slug.current, title, publishedAt, excerpt, coverImage, body`;
+
+export async function getPosts(): Promise<Post[]> {
+  if (!isSanityConfigured || !sanityClient) return localPosts;
+  // Drafts carry a `drafts.` id prefix; excluding them keeps unfinished
+  // writing off the public index.
+  const query = `*[_type == "post" && !(_id in path("drafts.**"))] | order(publishedAt desc){ ${POST_FIELDS} }`;
+  const docs = await sanityClient.fetch(query);
+  return docs.map((doc: Record<string, unknown>) => ({
+    ...doc,
+    coverImage: doc.coverImage
+      ? resolveImage(doc.coverImage as SanityImageSource, `${doc.title} cover image`)
+      : undefined,
+  })) as Post[];
+}
+
+export async function getPostBySlug(slug: string): Promise<Post | undefined> {
+  if (!isSanityConfigured || !sanityClient) {
+    return localPosts.find((post) => post.slug === slug);
+  }
+  const query = `*[_type == "post" && slug.current == $slug && !(_id in path("drafts.**"))][0]{ ${POST_FIELDS} }`;
+  const doc = await sanityClient.fetch(query, { slug });
+  if (!doc) return undefined;
+  return {
+    ...doc,
+    coverImage: doc.coverImage ? resolveImage(doc.coverImage, `${doc.title} cover image`) : undefined,
+  } as Post;
 }
 
 export async function getPressMentions(): Promise<PressMention[]> {
